@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="de">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>Thesis-Repositorium – Vorschau</title>
+<link rel="icon" href="logo/hub-icon.svg" type="image/svg+xml">
+<link rel="icon" href="logo/hub-icon-32.png" sizes="32x32" type="image/png">
+<meta name="theme-color" content="#14202E">
+<style>
+@font-face{ font-family:"Lato"; font-style:normal; font-weight:300; font-display:swap; src:url("fonts/lato-300.woff2") format("woff2"); }
+@font-face{ font-family:"Lato"; font-style:normal; font-weight:400; font-display:swap; src:url("fonts/lato-400.woff2") format("woff2"); }
+@font-face{ font-family:"Lato"; font-style:normal; font-weight:700; font-display:swap; src:url("fonts/lato-700.woff2") format("woff2"); }
+
+/* Farben wie in den Knowledge-Hubs (knowledge-hubs/index.html). */
+:root{
+  --paper:#EDF2FA; --card:#FFFFFF; --card-2:#F7FAFD;
+  --ink:#111111; --ink-soft:#444A50; --ink-faint:#545C63;
+  --line:#D0D8E4; --line-soft:#E3EAF3;
+  --brand:#0051A1; --brand-deep:#003B77; --brand-tint:#E1EAF6;
+  --petrol:#0E6E71; --petrol-tint:#DDF0EF;
+  --gold-text:#8A6E28; --gold-tint:#F6EEDB;
+  --action:#BE9E53; --action-deep:#A5873F; --on-action:#2A2207;
+  --held:#0A3F7E; --held-2:#0051A1; --fuss:#14202E;
+  --shadow:0 1px 2px rgba(16,40,38,.05), 0 8px 24px -16px rgba(16,40,38,.28);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0A1120; --card:#111B2E; --card-2:#0E1728;
+    --ink:#E9EEF6; --ink-soft:#A9B7CA; --ink-faint:#8FA0B7;
+    --line:#22314A; --line-soft:#1A2639;
+    --brand:#6FA8E8; --brand-deep:#9CC6F4; --brand-tint:#152742;
+    --petrol:#4FC2C4; --petrol-tint:#10302F;
+    --gold-text:#D9BE82; --gold-tint:#2A2414;
+    --action:#D4B878; --action-deep:#E3CB94; --on-action:#221A08;
+    --held:#0B2547; --held-2:#123A6B; --fuss:#070C17;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 30px -18px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0A1120; --card:#111B2E; --card-2:#0E1728;
+  --ink:#E9EEF6; --ink-soft:#A9B7CA; --ink-faint:#8FA0B7;
+  --line:#22314A; --line-soft:#1A2639;
+  --brand:#6FA8E8; --brand-deep:#9CC6F4; --brand-tint:#152742;
+  --petrol:#4FC2C4; --petrol-tint:#10302F;
+  --gold-text:#D9BE82; --gold-tint:#2A2414;
+  --action:#D4B878; --action-deep:#E3CB94; --on-action:#221A08;
+  --held:#0B2547; --held-2:#123A6B; --fuss:#070C17;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 30px -18px rgba(0,0,0,.7);
+}
+
+*{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; scroll-padding-top:20px; scroll-behavior:smooth; }
+@media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } }
+body{ margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Lato", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size:16px; line-height:1.5; -webkit-font-smoothing:antialiased; }
+a{ color:var(--brand); }
+.wrap{ max-width:1180px; margin:0 auto; padding:0 22px; }
+@media (max-width:600px){ .wrap{ padding:0 16px; } }
+.sr{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+:focus-visible{ outline:2px solid var(--brand); outline-offset:2px; }
+
+/* Hinweis: Vorschau */
+.vorschau{ background:var(--gold-tint); border-bottom:1px solid color-mix(in srgb, var(--action) 45%, transparent); font-size:14px; }
+.vorschau .wrap{ padding-top:10px; padding-bottom:10px; }
+.vorschau p{ margin:0; }
+
+/* Kopf */
+.kopf{ background:var(--fuss); color:#fff; }
+.kopf .wrap{ display:flex; align-items:center; gap:14px; min-height:54px; flex-wrap:wrap; }
+.kopf .marke{ font-weight:700; letter-spacing:.02em; color:#fff; text-decoration:none; }
+.kopf .partner{ margin-left:auto; font-size:13px; color:#C9D8EC; }
+.kopf .partner b{ color:#fff; }
+
+.held{ background:radial-gradient(110% 150% at 85% -30%, var(--held-2) 0%, transparent 60%), var(--held); color:#fff; }
+.held .wrap{ padding-top:42px; padding-bottom:38px; }
+.held-eyebrow{ margin:0 0 8px; font-size:12px; font-weight:700; letter-spacing:.14em; color:#C9D8EC; }
+.held h1{ margin:0; font-size:clamp(28px, 4.2vw, 42px); line-height:1.15; font-weight:700; max-width:21em; letter-spacing:-.01em; }
+.held-lede{ margin:14px 0 24px; font-size:17.5px; color:#E2EBF6; max-width:42em; }
+.suche-zeile{ display:flex; max-width:760px; background:#fff; border-radius:10px; padding:6px; box-shadow:0 18px 40px -20px rgba(0,0,0,.6); }
+.suche-zeile svg{ width:20px; height:20px; color:#6A7480; margin:0 4px 0 10px; align-self:center; flex:0 0 20px; }
+.suche-zeile input{ flex:1; min-width:0; border:0; outline:0; background:none; font:inherit; font-size:17px; padding:11px 8px; color:#111; }
+.suche-zeile input::placeholder{ color:#6A7480; }
+.suche-zeile:focus-within{ box-shadow:0 0 0 3px var(--action), 0 18px 40px -20px rgba(0,0,0,.6); }
+.kennzahlen{ display:flex; gap:28px; flex-wrap:wrap; margin:22px 0 0; padding:0; list-style:none; color:#C9D8EC; font-size:14px; }
+.kennzahlen b{ display:block; color:#fff; font-size:24px; line-height:1.1; }
+
+/* Hauptteil */
+main{ padding:28px 0 56px; }
+.raster{ display:grid; grid-template-columns:260px 1fr; gap:28px; align-items:start; }
+@media (max-width:900px){ .raster{ grid-template-columns:1fr; } }
+
+.filter{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px; box-shadow:var(--shadow); position:sticky; top:16px; }
+@media (max-width:900px){ .filter{ position:static; } }
+.filter h2{ margin:0 0 6px; font-size:12px; letter-spacing:.12em; color:var(--ink-faint); }
+.filter fieldset{ border:0; margin:0 0 18px; padding:0; }
+.filter legend{ font-size:12px; font-weight:700; letter-spacing:.12em; color:var(--ink-faint); margin-bottom:8px; padding:0; }
+.chips{ display:flex; flex-wrap:wrap; gap:6px; }
+.chip{ border:1px solid var(--line); background:var(--card-2); color:var(--ink); border-radius:999px; font:inherit; font-size:13.5px; padding:5px 11px; cursor:pointer; }
+.chip:hover{ border-color:var(--brand); }
+.chip[aria-pressed="true"]{ background:var(--brand); border-color:var(--brand); color:#fff; }
+.filter select{ width:100%; font:inherit; font-size:14.5px; padding:8px 10px; border:1px solid var(--line); border-radius:8px; background:var(--card-2); color:var(--ink); }
+.zuruecksetzen{ background:none; border:0; padding:0; font:inherit; font-size:14px; color:var(--brand); cursor:pointer; text-decoration:underline; }
+
+.ergebnis-kopf{ display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin:0 0 14px; }
+.ergebnis-kopf h2{ margin:0; font-size:22px; }
+.ergebnis-kopf p{ margin:0; color:var(--ink-faint); font-size:14.5px; }
+
+.liste{ display:grid; gap:14px; }
+.eintrag{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px 20px; box-shadow:var(--shadow); }
+.eintrag.preis{ border-color:var(--action); box-shadow:0 0 0 1px var(--action), var(--shadow); }
+.marken{ display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px; }
+.marke-k{ font-size:12px; font-weight:700; letter-spacing:.04em; padding:3px 9px; border-radius:999px; background:var(--brand-tint); color:var(--brand-deep); }
+.marke-k.stufe{ background:var(--petrol-tint); color:var(--petrol); }
+.marke-k.gold{ background:var(--gold-tint); color:var(--gold-text); }
+.marke-k.beispiel{ background:transparent; border:1px dashed var(--line); color:var(--ink-faint); font-weight:400; }
+.eintrag h3{ margin:0 0 4px; font-size:18.5px; line-height:1.3; }
+.eintrag .wer{ margin:0 0 10px; color:var(--ink-soft); font-size:14.5px; }
+.eintrag .kurz{ margin:0; }
+.eintrag details{ margin-top:12px; border-top:1px solid var(--line-soft); padding-top:10px; }
+.eintrag summary{ cursor:pointer; color:var(--brand); font-weight:700; font-size:14.5px; }
+.abstract{ display:grid; grid-template-columns:150px 1fr; gap:6px 16px; margin:12px 0 0; }
+@media (max-width:600px){ .abstract{ grid-template-columns:1fr; } }
+.abstract dt{ font-weight:700; font-size:14px; color:var(--ink-soft); }
+.abstract dd{ margin:0 0 6px; font-size:15px; }
+.fussleiste-eintrag{ display:flex; flex-wrap:wrap; gap:8px 18px; align-items:center; margin-top:14px; font-size:14px; color:var(--ink-soft); }
+.knopf{ display:inline-flex; align-items:center; gap:6px; border:1px solid var(--line); background:var(--card-2); color:var(--ink); border-radius:8px; font:inherit; font-size:14px; padding:6px 12px; cursor:pointer; text-decoration:none; }
+.knopf:hover{ border-color:var(--brand); }
+.leer{ background:var(--card); border:1px dashed var(--line); border-radius:12px; padding:28px; text-align:center; color:var(--ink-soft); }
+
+/* Abschnitte */
+.abschnitt{ margin-top:48px; }
+.abschnitt > h2{ font-size:24px; margin:0 0 6px; }
+.abschnitt > p.lede{ margin:0 0 18px; color:var(--ink-soft); max-width:46em; }
+.schritte{ display:grid; grid-template-columns:repeat(4, 1fr); gap:14px; list-style:none; margin:0; padding:0; counter-reset:s; }
+@media (max-width:900px){ .schritte{ grid-template-columns:1fr 1fr; } }
+@media (max-width:560px){ .schritte{ grid-template-columns:1fr; } }
+.schritte li{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px 18px; counter-increment:s; }
+.schritte li::before{ content:counter(s); display:inline-grid; place-items:center; width:28px; height:28px; border-radius:50%; background:var(--brand); color:#fff; font-weight:700; font-size:14px; margin-bottom:8px; }
+.schritte b{ display:block; margin-bottom:4px; }
+.schritte span{ font-size:14.5px; color:var(--ink-soft); }
+
+.zwei{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+@media (max-width:900px){ .zwei{ grid-template-columns:1fr; } }
+.karte{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px 22px; box-shadow:var(--shadow); }
+.karte h3{ margin:0 0 10px; font-size:18px; }
+.formular label{ display:block; font-size:14px; font-weight:700; margin:12px 0 4px; color:var(--ink-soft); }
+.formular input, .formular select, .formular textarea{ width:100%; font:inherit; font-size:15px; padding:9px 11px; border:1px solid var(--line); border-radius:8px; background:var(--card-2); color:var(--ink); }
+.formular textarea{ min-height:84px; resize:vertical; }
+.formular .reihe{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+@media (max-width:560px){ .formular .reihe{ grid-template-columns:1fr; } }
+.formular .check{ display:flex; gap:8px; align-items:flex-start; font-weight:400; color:var(--ink); }
+.formular .check input{ width:auto; margin-top:4px; }
+.formular button{ margin-top:16px; background:var(--action); color:var(--on-action); border:0; border-radius:8px; font:inherit; font-weight:700; padding:11px 20px; cursor:not-allowed; opacity:.75; }
+.formular small{ display:block; margin-top:8px; color:var(--ink-faint); }
+
+/* So erscheint es im Themenhub */
+.hubprobe{ border:1px solid var(--line); border-radius:12px; overflow:hidden; background:var(--card); }
+.hubprobe .hp-kopf{ background:var(--held); color:#fff; padding:12px 18px; font-weight:700; }
+.hubprobe .hp-kopf small{ display:block; font-weight:400; color:#C9D8EC; font-size:12.5px; letter-spacing:.1em; }
+.hubprobe ul{ list-style:none; margin:0; padding:6px 18px 14px; }
+.hubprobe li{ padding:10px 0; border-bottom:1px solid var(--line-soft); font-size:15px; }
+.hubprobe li:last-child{ border-bottom:0; }
+.hubprobe li small{ display:block; color:var(--ink-faint); font-size:13px; }
+.hubprobe .rubrik{ display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:.06em; color:var(--petrol); background:var(--petrol-tint); border-radius:999px; padding:2px 8px; margin-right:6px; }
+
+.fuss{ background:var(--fuss); color:#C9D8EC; font-size:14px; }
+.fuss .wrap{ display:flex; flex-wrap:wrap; gap:16px 28px; align-items:center; padding-top:28px; padding-bottom:28px; }
+.fuss img{ height:34px; width:auto; }
+.fuss a{ color:#fff; }
+.fuss p{ margin:0; }
+
+.testband{ position:fixed; left:12px; bottom:12px; z-index:9999; background:#C62828; color:#fff; font:700 12px/1.3 Lato,Arial,sans-serif; padding:7px 11px; border-radius:6px; box-shadow:0 4px 14px rgba(0,0,0,.3); }
+.toast{ position:fixed; right:16px; bottom:16px; z-index:9999; background:var(--ink); color:var(--paper); padding:9px 14px; border-radius:8px; font-size:14px; }
+.toast[hidden]{ display:none; }
+</style>
+
+<header class="kopf">
+  <div class="wrap">
+    <a class="marke" href="#">Knowledge-Hubs · Aus der Nachwuchsforschung</a>
+    <span class="partner">Ein Kooperationsprojekt von <b>DNVF e. V.</b> und <b>Monitor Versorgungsforschung</b></span>
+  </div>
+</header>
+
+<div class="vorschau" role="note">
+  <div class="wrap"><p><b>Vorschau für die Gruppe der Hochschullehrenden im DNVF.</b> Diese Seite ist nicht öffentlich verlinkt und für Suchmaschinen gesperrt. Alle Einträge sind <b>erfundene Beispiele</b>, um Aufbau und Funktion zu zeigen. Personen, Ergebnisse und DOIs sind nicht echt.</p></div>
+</div>
+
+<section class="held">
+  <div class="wrap">
+    <p class="held-eyebrow">THESIS-REPOSITORIUM</p>
+    <h1>Abschlussarbeiten aus Versorgungsforschung und Public Health</h1>
+    <p class="held-lede">Ausgewählte Bachelor-, Master- und Doktorarbeiten als strukturierte Kurzfassung, mit DOI zitierfähig und eingeordnet in den passenden Themenhub. Die Auswahl verantwortet die Gruppe der Hochschullehrenden im DNVF.</p>
+    <label class="sr" for="q">Arbeiten durchsuchen</label>
+    <div class="suche-zeile">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Titel, Methode, Stichwort oder Hochschule, z. B. Routinedaten" autocomplete="off">
+    </div>
+    <ul class="kennzahlen" aria-label="Bestand der Vorschau">
+      <li><b id="kz-gesamt">0</b>Arbeiten</li>
+      <li><b id="kz-hubs">0</b>Themenhubs</li>
+      <li><b id="kz-hs">0</b>Hochschulen</li>
+    </ul>
+  </div>
+</section>
+
+<main>
+  <div class="wrap">
+    <div class="raster">
+      <aside class="filter" aria-label="Filter">
+        <fieldset>
+          <legend>STUFE</legend>
+          <div class="chips" id="f-stufe"></div>
+        </fieldset>
+        <fieldset>
+          <legend><label for="f-hub">THEMENHUB</label></legend>
+          <select id="f-hub"><option value="">Alle Themenhubs</option></select>
+        </fieldset>
+        <fieldset>
+          <legend><label for="f-hs">HOCHSCHULE</label></legend>
+          <select id="f-hs"><option value="">Alle Hochschulen</option></select>
+        </fieldset>
+        <fieldset>
+          <legend>JAHR</legend>
+          <div class="chips" id="f-jahr"></div>
+        </fieldset>
+        <fieldset>
+          <legend>METHODE</legend>
+          <div class="chips" id="f-methode"></div>
+        </fieldset>
+        <button class="zuruecksetzen" id="reset" type="button">Alle Filter zurücksetzen</button>
+      </aside>
+
+      <section aria-labelledby="ergebnis-titel">
+        <div class="ergebnis-kopf">
+          <h2 id="ergebnis-titel">Arbeiten</h2>
+          <p id="anzahl" aria-live="polite"></p>
+        </div>
+        <div class="liste" id="liste"></div>
+      </section>
+    </div>
+
+    <section class="abschnitt" id="ablauf">
+      <h2>So kommt eine Arbeit hierher</h2>
+      <p class="lede">Die Qualität tragen Note und Empfehlung der Betreuung. Das Gremium prüft Passung und Kurzfassung, es begutachtet die Arbeit nicht neu.</p>
+      <ol class="schritte">
+        <li><b>Empfehlung</b><span>Die Betreuung empfiehlt die Arbeit und bestätigt Note und Einverständnis.</span></li>
+        <li><b>Einreichung</b><span>Kurzfassung nach festem Schema, dazu der Link zum Volltext im Hochschul-Repositorium.</span></li>
+        <li><b>Prüfung</b><span>Das Gremium der Hochschullehrenden im DNVF prüft. Passt etwas nicht, gibt es eine Rückmeldung zur Überarbeitung.</span></li>
+        <li><b>Veröffentlichung</b><span>DOI über Crossref, Eintrag hier, im passenden Themenhub und im Hub-Newsletter.</span></li>
+      </ol>
+    </section>
+
+    <section class="abschnitt" id="hub">
+      <h2>So erscheint die Arbeit im Themenhub</h2>
+      <p class="lede">Jede Arbeit steht zusätzlich dort, wo das Fach zu ihrem Thema sucht, als eigene Rubrik zwischen den Studien des Tages.</p>
+      <div class="zwei">
+        <div class="hubprobe" aria-label="Beispiel: Ausschnitt aus dem Hub Pflege und Langzeitversorgung">
+          <div class="hp-kopf"><small>THEMENHUB</small>Pflege &amp; Langzeitversorgung</div>
+          <ul>
+            <li>Personalbemessung in der stationären Langzeitpflege: eine Kohortenstudie<small>Studie des Tages · PubMed</small></li>
+            <li><span class="rubrik">AUS DER NACHWUCHSFORSCHUNG</span>Impfquoten gegen Influenza in Pflegeheimen und ihre Einflussfaktoren<small>Masterarbeit · Beispiel-Hochschule · 2026</small></li>
+            <li>Sturzprävention mit digitalen Sensoren: systematische Übersicht<small>Studie des Tages · PubMed</small></li>
+          </ul>
+        </div>
+        <div class="karte">
+          <h3>Was die Beteiligten davon haben</h3>
+          <p><b>Absolventinnen und Absolventen:</b> eine zitierfähige Veröffentlichung mit DOI und ein Publikum aus Wissenschaft und Versorgungspraxis.</p>
+          <p><b>Studiengänge:</b> sichtbare Ergebnisse der eigenen Lehre, vergleichbar über Standorte hinweg.</p>
+          <p style="margin-bottom:0"><b>Das Fach:</b> Befunde aus Qualifikationsarbeiten, die sonst kaum jemand außerhalb der Hochschule findet.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="abschnitt" id="einreichen">
+      <h2>Arbeit einreichen</h2>
+      <p class="lede">So könnte das Formular auf der Einreichungsplattform von MVF aussehen. In dieser Vorschau wird nichts übermittelt.</p>
+      <div class="karte formular">
+        <form onsubmit="return false" aria-label="Einreichungsformular, Vorschau ohne Funktion">
+          <div class="reihe">
+            <div><label for="e-name">Name</label><input id="e-name" disabled></div>
+            <div><label for="e-stufe">Stufe</label><select id="e-stufe" disabled><option>Masterarbeit</option></select></div>
+          </div>
+          <div class="reihe">
+            <div><label for="e-hs">Hochschule und Studiengang</label><input id="e-hs" disabled></div>
+            <div><label for="e-betr">Betreuung (E-Mail für die Empfehlung)</label><input id="e-betr" disabled></div>
+          </div>
+          <label for="e-titel">Titel der Arbeit</label><input id="e-titel" disabled>
+          <div class="reihe">
+            <div><label for="e-hg">Hintergrund und Fragestellung</label><textarea id="e-hg" disabled></textarea></div>
+            <div><label for="e-me">Daten und Methode</label><textarea id="e-me" disabled></textarea></div>
+          </div>
+          <div class="reihe">
+            <div><label for="e-er">Ergebnisse</label><textarea id="e-er" disabled></textarea></div>
+            <div><label for="e-be">Bedeutung für die Versorgung</label><textarea id="e-be" disabled></textarea></div>
+          </div>
+          <label for="e-link">Link zum Volltext im Hochschul-Repositorium</label><input id="e-link" disabled>
+          <label class="check"><input type="checkbox" disabled> Die Kurzfassung enthält keine personenbezogenen Daten. Ein Ethikvotum ist genannt, wo eines nötig war.</label>
+          <button type="submit" disabled>Zur Prüfung einreichen</button>
+          <small>Vorschau: Das Formular ist ohne Funktion.</small>
+        </form>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="fuss">
+  <div class="wrap">
+    <img src="logo/mvf-logo-negativ.png" alt="Monitor Versorgungsforschung">
+    <p>Thesis-Repositorium · ein Kooperationsprojekt von DNVF e. V. und Monitor Versorgungsforschung · Vorschau, Stand 23.10.2026</p>
+    <p><a href="https://knowledge-hubs.m-vf.de/">Zu den Knowledge-Hubs</a></p>
+  </div>
+</footer>
+
+<div class="testband">VORSCHAU – nicht öffentlich, Beispieldaten</div>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+// Erfundene Beispieleinträge. Hochschulen sind bewusst neutral benannt,
+// damit kein Eintrag einer echten Einrichtung zugeschrieben wird.
+const HUBS = {
+  wissen: "Versorgungsforschung", ki: "Digitalisierung, KI & Gesundheit", gender: "Geschlechtersensible Medizin",
+  longevity: "Gesundes Altern & Longevity", healthliteracy: "Gesundheitskompetenz", klima: "Hitze, Klima & Gesundheit",
+  impfen: "Impfen & Prävention", ncd: "NCD/Chronische Krankheiten", safety: "Patientensicherheit",
+  pflege: "Pflege & Langzeitversorgung", mental: "Psychische Gesundheit", adipositas: "Adipositas",
+  diabetes: "Diabetes", kardio: "Kardiologie", onkologie: "Onkologie"
+};
+const ARBEITEN = [
+  { id: 1, stufe: "Masterarbeit", hub: "pflege", jahr: 2026, methode: "Quantitativ", preis: true,
+    titel: "Impfquoten gegen Influenza in Pflegeheimen und ihre Einflussfaktoren",
+    autor: "Lea Beispiel", hs: "Universität A", sg: "M. Sc. Versorgungsforschung",
+    stw: ["Influenza", "Pflegeheim", "Routinedaten"],
+    hg: "Bewohnerinnen und Bewohner von Pflegeheimen sind besonders gefährdet, die Impfquoten schwanken zwischen den Einrichtungen stark.",
+    me: "Querschnittsanalyse von Abrechnungsdaten einer Krankenkasse für zwei Saisons, Mehrebenenmodell mit Einrichtungs- und Regionalmerkmalen.",
+    er: "Die Quote unterschied sich deutlich zwischen Einrichtungen. Ein fester Impftermin im Haus und eine betreuende Hausarztpraxis gingen mit höheren Quoten einher.",
+    be: "Organisatorische Merkmale der Einrichtung sind ein Ansatzpunkt, der über die individuelle Impfentscheidung hinausgeht." },
+  { id: 2, stufe: "Dissertation", hub: "wissen", jahr: 2025, methode: "Mixed Methods",
+    titel: "Wie Ergebnisse aus Innovationsfondsprojekten in die Regelversorgung gelangen",
+    autor: "Dr. Jonas Muster", hs: "Universität B", sg: "Promotion Gesundheitswissenschaften",
+    stw: ["Innovationsfonds", "Transfer", "Implementierung"],
+    hg: "Viele geförderte Versorgungsformen enden mit der Förderung. Wovon der Transfer abhängt, ist wenig untersucht.",
+    me: "Dokumentenanalyse abgeschlossener Projekte und leitfadengestützte Interviews mit Konsortialführungen und Kostenträgern.",
+    er: "Frühe Einbindung der Kostenträger und eine klar benannte Zuständigkeit nach Projektende unterschieden übernommene von nicht übernommenen Projekten.",
+    be: "Die Ergebnisse geben Hinweise, wie Transfer bereits bei der Antragstellung mitgeplant werden kann." },
+  { id: 3, stufe: "Bachelorarbeit", hub: "healthliteracy", jahr: 2026, methode: "Qualitativ",
+    titel: "Wie Eltern Gesundheitsinformationen zu Fieber bei Kleinkindern suchen und bewerten",
+    autor: "Mia Exempel", hs: "Hochschule C", sg: "B. Sc. Public Health",
+    stw: ["Elternkompetenz", "Online-Information", "Kindergesundheit"],
+    hg: "Fieber ist ein häufiger Anlass für Notfallbesuche. Unklar ist, welche Quellen Eltern dabei nutzen.",
+    me: "Zwölf leitfadengestützte Interviews mit Eltern, inhaltsanalytische Auswertung.",
+    er: "Eltern nutzten vor allem Suchmaschinen und Messengergruppen. Kinderärztliche Hinweise auf Papier wurden selten wiedergefunden.",
+    be: "Informationsangebote der Praxen sollten dort erreichbar sein, wo Eltern zuerst suchen." },
+  { id: 4, stufe: "Masterarbeit", hub: "ki", jahr: 2026, methode: "Quantitativ",
+    titel: "Nutzung digitaler Gesundheitsanwendungen nach der Verordnung: eine Analyse von Abbruchmustern",
+    autor: "Tim Probe", hs: "Universität D", sg: "M. Sc. Health Services Research",
+    stw: ["DiGA", "Adhärenz", "Nutzungsdaten"],
+    hg: "Zur tatsächlichen Nutzung verordneter Anwendungen über die ersten Wochen liegen wenige Daten vor.",
+    me: "Sekundäranalyse pseudonymisierter Nutzungsdaten eines Herstellers, Überlebenszeitanalyse bis zum Nutzungsabbruch.",
+    er: "Die meisten Abbrüche fielen in die ersten drei Wochen. Erinnerungsfunktionen gingen mit längerer Nutzung einher.",
+    be: "Für die Bewertung des Nutzens sollte die Nutzungsdauer mit ausgewiesen werden." },
+  { id: 5, stufe: "Masterarbeit", hub: "klima", jahr: 2025, methode: "Quantitativ",
+    titel: "Hitzetage und Rettungsdiensteinsätze bei älteren Menschen in einer Großstadt",
+    autor: "Sara Vorlage", hs: "Universität A", sg: "M. Sc. Epidemiologie",
+    stw: ["Hitze", "Rettungsdienst", "Zeitreihe"],
+    hg: "Hitzeaktionspläne brauchen lokale Daten darüber, welche Gruppen an heißen Tagen Hilfe benötigen.",
+    me: "Zeitreihenanalyse von Einsatzdaten eines städtischen Rettungsdienstes und Wetterdaten über fünf Sommer.",
+    er: "An Hitzetagen stiegen die Einsätze bei über 75-Jährigen, besonders in dicht bebauten Stadtteilen.",
+    be: "Die Kartierung stützt eine gezielte Ansprache in einzelnen Quartieren." },
+  { id: 6, stufe: "Bachelorarbeit", hub: "safety", jahr: 2026, methode: "Übersichtsarbeit",
+    titel: "Fehlermeldesysteme im Krankenhaus: Was fördert die Meldebereitschaft von Pflegekräften?",
+    autor: "Noah Entwurf", hs: "Hochschule C", sg: "B. Sc. Pflegewissenschaft",
+    stw: ["CIRS", "Sicherheitskultur", "Scoping Review"],
+    hg: "Meldesysteme leben von der Beteiligung. In der Pflege wird weniger gemeldet als erwartet.",
+    me: "Scoping Review nach PRISMA-ScR in drei Datenbanken.",
+    er: "Rückmeldung auf Meldungen und ein sanktionsfreier Umgang waren die am häufigsten genannten Förderfaktoren.",
+    be: "Krankenhäuser können die Meldebereitschaft vor allem über sichtbare Rückmeldungen stärken." },
+  { id: 7, stufe: "Dissertation", hub: "mental", jahr: 2026, methode: "Quantitativ",
+    titel: "Wartezeiten auf ambulante Psychotherapie und Inanspruchnahme stationärer Versorgung",
+    autor: "Dr. Clara Schablone", hs: "Universität B", sg: "Promotion Medizin",
+    stw: ["Psychotherapie", "Wartezeit", "Versorgungspfade"],
+    hg: "Lange Wartezeiten werden häufig beklagt. Ob sie mit späteren Klinikaufenthalten zusammenhängen, ist offen.",
+    me: "Kohortenstudie mit Abrechnungsdaten, Verknüpfung von Erstkontakt, Therapiebeginn und stationären Aufnahmen.",
+    er: "Längere Zeit bis zum Therapiebeginn ging mit häufigeren stationären Aufnahmen im Folgejahr einher.",
+    be: "Die Befunde sprechen dafür, Wartezeiten als Qualitätsmerkmal der Versorgung zu erfassen." },
+  { id: 8, stufe: "Masterarbeit", hub: "diabetes", jahr: 2025, methode: "Mixed Methods",
+    titel: "Strukturierte Behandlungsprogramme für Typ-2-Diabetes aus Sicht von Hausarztpraxen",
+    autor: "Ben Muster", hs: "Universität D", sg: "M. Sc. Versorgungsforschung",
+    stw: ["DMP", "Hausarztpraxis", "Befragung"],
+    hg: "Die Programme sind etabliert, ihr Aufwand in den Praxen wird unterschiedlich bewertet.",
+    me: "Online-Befragung von Praxen in zwei Bundesländern, ergänzt um Fokusgruppen.",
+    er: "Praxen schätzten die Struktur, kritisierten aber Dokumentationsaufwand und fehlende Rückmeldung der Daten.",
+    be: "Eine Rückspiegelung der eigenen Daten an die Praxen könnte die Akzeptanz erhöhen." },
+  { id: 9, stufe: "Masterarbeit", hub: "gender", jahr: 2026, methode: "Quantitativ",
+    titel: "Geschlechtsunterschiede in der Zeit bis zur Diagnose eines Herzinfarkts in der Notaufnahme",
+    autor: "Ella Probe", hs: "Universität A", sg: "M. Sc. Public Health",
+    stw: ["Herzinfarkt", "Notaufnahme", "Geschlecht"],
+    hg: "Frauen zeigen häufiger untypische Beschwerden. Ob sich das in der Notaufnahme auswirkt, wurde lokal geprüft.",
+    me: "Retrospektive Auswertung von Notaufnahmedaten zweier Kliniken, Regressionsmodelle.",
+    er: "Bei Frauen verging im Mittel mehr Zeit bis zum ersten EKG, besonders bei unspezifischen Leitsymptomen.",
+    be: "Triagekriterien sollten unspezifische Beschwerdebilder ausdrücklich berücksichtigen." },
+  { id: 10, stufe: "Bachelorarbeit", hub: "adipositas", jahr: 2025, methode: "Qualitativ",
+    titel: "Erfahrungen mit Stigmatisierung bei Menschen mit Adipositas in der hausärztlichen Versorgung",
+    autor: "Paul Exempel", hs: "Hochschule E", sg: "B. A. Gesundheitsmanagement",
+    stw: ["Stigma", "Arzt-Patient-Kommunikation", "Interviews"],
+    hg: "Gewichtsbezogene Stigmatisierung kann dazu führen, dass Arztbesuche vermieden werden.",
+    me: "Zehn narrative Interviews, thematische Analyse.",
+    er: "Befragte berichteten, dass Beschwerden auf das Gewicht zurückgeführt wurden, bevor andere Ursachen geprüft waren.",
+    be: "Fortbildungen zu gewichtssensibler Kommunikation sind ein naheliegender Ansatz." },
+  { id: 11, stufe: "Masterarbeit", hub: "onkologie", jahr: 2026, methode: "Quantitativ",
+    titel: "Wohnortnähe und Teilnahme am Mammographie-Screening",
+    autor: "Hanna Vorlage", hs: "Universität B", sg: "M. Sc. Epidemiologie",
+    stw: ["Screening", "Erreichbarkeit", "Geodaten"],
+    hg: "Die Teilnahme am Screening ist regional unterschiedlich. Die Wegezeit ist ein möglicher Grund.",
+    me: "Ökologische Analyse auf Gemeindeebene, Wegezeiten zu den Screeningeinheiten aus Routingdaten.",
+    er: "Mit zunehmender Wegezeit sank die Teilnahme, unabhängig von Alter und Sozialstruktur der Gemeinden.",
+    be: "Mobile Einheiten könnten in schlecht erreichbaren Regionen die Teilnahme stützen." },
+  { id: 12, stufe: "Dissertation", hub: "longevity", jahr: 2025, methode: "Quantitativ",
+    titel: "Soziale Teilhabe im Alter und der Verlauf von Pflegebedürftigkeit",
+    autor: "Dr. Max Entwurf", hs: "Universität D", sg: "Promotion Public Health",
+    stw: ["Teilhabe", "Pflegebedürftigkeit", "Längsschnitt"],
+    hg: "Soziale Teilhabe gilt als Schutzfaktor im Alter. Ihr Zusammenhang mit dem Eintritt von Pflegebedürftigkeit ist wenig belegt.",
+    me: "Längsschnittanalyse einer Bevölkerungsbefragung über acht Jahre, Ereigniszeitmodelle.",
+    er: "Höhere Teilhabe ging mit einem späteren Eintritt in einen Pflegegrad einher.",
+    be: "Teilhabeangebote können in kommunalen Präventionsstrategien mitgedacht werden." }
+];
+const STUFEN = ["Bachelorarbeit", "Masterarbeit", "Dissertation"];
+const METHODEN = ["Quantitativ", "Qualitativ", "Mixed Methods", "Übersichtsarbeit"];
+const zustand = { q: "", stufe: "", hub: "", hs: "", jahr: "", methode: "" };
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const doi = a => "10.xxxxx/beispiel." + a.jahr + "." + String(a.id).padStart(3, "0");
+const zitat = a => `${a.autor.replace(/^Dr\. /, "")} (${a.jahr}). ${a.titel}. ${a.stufe}, ${a.hs}. Kurzfassung im Thesis-Repositorium von DNVF und MVF. https://doi.org/${doi(a)}`;
+
+function chips(ziel, werte, feld) {
+  const box = $(ziel);
+  box.innerHTML = werte.map(w => `<button type="button" class="chip" data-wert="${esc(w)}" aria-pressed="false">${esc(w)}</button>`).join("");
+  box.addEventListener("click", e => {
+    const b = e.target.closest(".chip"); if (!b) return;
+    zustand[feld] = zustand[feld] === b.dataset.wert ? "" : b.dataset.wert;
+    zeigen();
+  });
+}
+function chipsAbgleichen() {
+  for (const [ziel, feld] of [["#f-stufe", "stufe"], ["#f-jahr", "jahr"], ["#f-methode", "methode"]])
+    document.querySelectorAll(ziel + " .chip").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.wert === String(zustand[feld]))));
+}
+
+function passt(a) {
+  if (zustand.stufe && a.stufe !== zustand.stufe) return false;
+  if (zustand.hub && a.hub !== zustand.hub) return false;
+  if (zustand.hs && a.hs !== zustand.hs) return false;
+  if (zustand.jahr && String(a.jahr) !== zustand.jahr) return false;
+  if (zustand.methode && a.methode !== zustand.methode) return false;
+  if (zustand.q) {
+    const text = [a.titel, a.autor, a.hs, a.sg, a.hg, a.me, a.er, a.be, HUBS[a.hub], a.stw.join(" ")].join(" ").toLowerCase();
+    return zustand.q.toLowerCase().split(/\s+/).filter(Boolean).every(w => text.includes(w));
+  }
+  return true;
+}
+
+function karte(a) {
+  return `<article class="eintrag${a.preis ? " preis" : ""}">
+    <div class="marken">
+      <span class="marke-k stufe">${esc(a.stufe)}</span>
+      <span class="marke-k">${esc(HUBS[a.hub])}</span>
+      ${a.preis ? '<span class="marke-k gold">Nachwuchspreis DKVF</span>' : ""}
+      <span class="marke-k beispiel">Beispiel, fiktiv</span>
+    </div>
+    <h3>${esc(a.titel)}</h3>
+    <p class="wer">${esc(a.autor)} · ${esc(a.hs)} · ${esc(a.sg)} · ${a.jahr}</p>
+    <p class="kurz">${esc(a.er)}</p>
+    <details>
+      <summary>Strukturierte Kurzfassung</summary>
+      <dl class="abstract">
+        <dt>Hintergrund</dt><dd>${esc(a.hg)}</dd>
+        <dt>Daten und Methode</dt><dd>${esc(a.me)}</dd>
+        <dt>Ergebnisse</dt><dd>${esc(a.er)}</dd>
+        <dt>Bedeutung für die Versorgung</dt><dd>${esc(a.be)}</dd>
+        <dt>Stichwörter</dt><dd>${a.stw.map(esc).join(", ")}</dd>
+      </dl>
+    </details>
+    <div class="fussleiste-eintrag">
+      <span>DOI ${esc(doi(a))} <small>(Platzhalter)</small></span>
+      <span>Betreuung: N. N. · empfohlen</span>
+      <span>Geprüft vom Gremium der Hochschullehrenden im DNVF</span>
+      <button class="knopf" type="button" data-zitat="${a.id}">Zitieren</button>
+      <a class="knopf" href="#" aria-disabled="true" onclick="return false" title="In der Vorschau ohne Ziel">Volltext im Hochschul-Repositorium</a>
+    </div>
+  </article>`;
+}
+
+function zeigen() {
+  chipsAbgleichen();
+  const treffer = ARBEITEN.filter(passt).sort((x, y) => (y.preis - x.preis) || (y.jahr - x.jahr));
+  $("#liste").innerHTML = treffer.length ? treffer.map(karte).join("")
+    : '<div class="leer">Keine Arbeit passt zu dieser Auswahl. <button class="zuruecksetzen" type="button" onclick="zuruecksetzen()">Filter zurücksetzen</button></div>';
+  $("#anzahl").textContent = treffer.length === ARBEITEN.length ? `${treffer.length} Arbeiten` : `${treffer.length} von ${ARBEITEN.length} Arbeiten`;
+}
+function zuruecksetzen() {
+  Object.keys(zustand).forEach(k => zustand[k] = "");
+  $("#q").value = ""; $("#f-hub").value = ""; $("#f-hs").value = "";
+  zeigen();
+}
+
+function start() {
+  chips("#f-stufe", STUFEN, "stufe");
+  chips("#f-jahr", [...new Set(ARBEITEN.map(a => String(a.jahr)))].sort().reverse(), "jahr");
+  chips("#f-methode", METHODEN, "methode");
+  const hubs = [...new Set(ARBEITEN.map(a => a.hub))].sort((x, y) => HUBS[x].localeCompare(HUBS[y], "de"));
+  $("#f-hub").insertAdjacentHTML("beforeend", hubs.map(h => `<option value="${h}">${esc(HUBS[h])}</option>`).join(""));
+  const hs = [...new Set(ARBEITEN.map(a => a.hs))].sort((x, y) => x.localeCompare(y, "de"));
+  $("#f-hs").insertAdjacentHTML("beforeend", hs.map(h => `<option>${esc(h)}</option>`).join(""));
+  $("#kz-gesamt").textContent = ARBEITEN.length;
+  $("#kz-hubs").textContent = hubs.length;
+  $("#kz-hs").textContent = hs.length;
+
+  $("#q").addEventListener("input", e => { zustand.q = e.target.value.trim(); zeigen(); });
+  $("#f-hub").addEventListener("change", e => { zustand.hub = e.target.value; zeigen(); });
+  $("#f-hs").addEventListener("change", e => { zustand.hs = e.target.value; zeigen(); });
+  $("#reset").addEventListener("click", zuruecksetzen);
+  $("#liste").addEventListener("click", async e => {
+    const b = e.target.closest("[data-zitat]"); if (!b) return;
+    const a = ARBEITEN.find(x => x.id === Number(b.dataset.zitat));
+    let ok = false;
+    try { await navigator.clipboard.writeText(zitat(a)); ok = true; } catch (_) {}
+    const t = $("#toast");
+    t.textContent = ok ? "Zitation kopiert" : zitat(a);
+    t.hidden = false; clearTimeout(t._z); t._z = setTimeout(() => t.hidden = true, ok ? 1800 : 6000);
+  });
+  zeigen();
+}
+start();
+</script>
+</html>
