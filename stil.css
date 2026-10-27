@@ -380,3 +380,6 @@ table.schema{ width:100%; border-collapse:collapse; background:var(--card); bord
 .wahl svg{ width:16px; height:16px; flex:0 0 16px; margin-top:3px; color:var(--petrol); }
 .gruppe-ic{ width:20px; height:20px; vertical-align:-4px; margin-right:6px; color:var(--petrol); }
 .steckbrief dd a{ color:var(--brand); }
+
+.reihe3.plz-ort{ grid-template-columns:1fr 2fr 1.4fr; }
+@media (max-width:640px){ .reihe3.plz-ort{ grid-template-columns:1fr; } }

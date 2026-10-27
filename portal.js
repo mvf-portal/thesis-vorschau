@@ -359,6 +359,11 @@
     };
     ethik.addEventListener("change", ethikNeu);
 
+    const probe = $("#e-probe"), studabo = $("#e-studabo"), aboFelder = $("#abo-felder");
+    const aboNeu = () => { aboFelder.hidden = !(probe.checked || studabo.checked); };
+    probe.addEventListener("change", aboNeu);
+    studabo.addEventListener("change", aboNeu);
+
     const profilJa = $("#e-profil"), profilFelder = $("#profil-felder");
     const profilNeu = () => { profilFelder.hidden = !profilJa.checked; };
     profilJa.addEventListener("change", profilNeu);
@@ -417,7 +422,7 @@
       $("#speicherstand").textContent = "Ihr letzter Zwischenstand wurde wiederhergestellt.";
     }
     laden();
-    artNeu(); hubsNeu(); ethikNeu(); volltextNeu(); stwNeu(); profilNeu();
+    artNeu(); hubsNeu(); ethikNeu(); volltextNeu(); stwNeu(); profilNeu(); aboNeu();
     hsA.hidden = hs.value !== "andere"; andereT.hidden = !andereDaten.checked;
     zaehlerAnbinden(form);
     let warte;
