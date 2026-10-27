@@ -23,7 +23,7 @@
 <header class="portalkopf">
   <div class="wrap">
     <a class="portalname" href="index.html"><small>NACHWUCHSFORSCHUNG</small><b>Thesis-Portal</b><span class="tag">VORSCHAU</span></a>
-    <nav class="reiter" aria-label="Thesis-Portal"><a href="index.html">Arbeiten</a><a href="studierende.html">Für Studierende</a><a href="betreuende.html">Für Betreuende</a><a href="ueber.html">Über das Portal</a><a class="einreichen" href="einreichen.html" aria-current="page"><span class="plus" aria-hidden="true">+</span>Arbeit einreichen</a></nav>
+    <nav class="reiter" aria-label="Thesis-Portal"><a href="index.html">Arbeiten</a><a href="profile.html">Profile</a><a href="studierende.html">Für Studierende</a><a href="betreuende.html">Für Betreuende</a><a href="ueber.html">Über das Portal</a><a class="einreichen" href="einreichen.html" aria-current="page"><span class="plus" aria-hidden="true">+</span>Arbeit einreichen</a></nav>
   </div>
 </header>
 <section class="einstieg"><div class="wrap">
@@ -135,7 +135,25 @@
     <input id="e-link" type="url" placeholder="https://… oder DOI" hidden style="margin-top:8px"></div>
 </section>
 
-<section class="abschnitt"><h2><span class="nummer">6</span>Bestätigen und absenden</h2>
+<section class="abschnitt"><h2><span class="nummer">6</span>Ihr Profil (freiwillig)</h2>
+  <p style="margin:6px 0 0">Mit einem Profil stellen Sie sich vor. Alle Ihre Arbeiten im Portal erscheinen dort gesammelt. Ob Sie ein Profil anlegen und wer Sie darüber erreichen darf, entscheiden Sie selbst. Das hat keinen Einfluss auf die Aufnahme Ihrer Arbeit. <a href="profile.html">Beispiele ansehen</a></p>
+  <label class="check"><input type="checkbox" id="e-profil"><span><b>Ja, ich möchte ein Profil im Thesis-Portal anlegen.</b></span></label>
+  <div id="profil-felder" hidden>
+    <div class="feld"><label for="e-p-status">Aktueller Stand</label><input id="e-p-status" type="text" placeholder="z. B. Abschluss M. Sc. Versorgungsforschung, März 2026"></div>
+    <div class="feld"><label for="e-p-kurz">Über mich <span class="zaehler" data-zaehler-fuer="e-p-kurz">0 / 400</span></label>
+      <textarea id="e-p-kurz" data-max="400" placeholder="Zwei, drei Sätze: woran Sie arbeiten, was Sie interessiert"></textarea></div>
+    <div class="reihe">
+      <div class="feld"><label for="e-p-schwer">Schwerpunkte</label><input id="e-p-schwer" type="text" placeholder="durch Kommas getrennt, z. B. Langzeitpflege, Routinedaten"></div>
+      <div class="feld"><label for="e-p-meth">Methoden</label><input id="e-p-meth" type="text" placeholder="z. B. Mehrebenenmodelle, R, Interviews"></div>
+    </div>
+    <div class="feld"><label for="e-p-sucht">Ich suche (freiwillig)</label><input id="e-p-sucht" type="text" placeholder="z. B. Promotion ab 2027, Stelle in der Versorgungsforschung"></div>
+    <div class="feld"><span class="label">Wer darf Sie über das Portal kontaktieren?</span>
+      <span class="hilfe" style="margin:0 0 6px">Für jede Gruppe einzeln. Ihre E-Mail-Adresse bleibt verborgen, bis Sie antworten. Sie können das jederzeit ändern oder das Profil löschen.</span>
+      <div class="optionen"><label class="option"><input type="checkbox" name="e-kontakt" value="hochschulen"><span>Hochschulen und Forschung<small>Promotion, Stellen in Projekten</small></span></label><label class="option"><input type="checkbox" name="e-kontakt" value="arbeitgeber"><span>Arbeitgeber<small>Stellen, Traineeprogramme, Praktika</small></span></label><label class="option"><input type="checkbox" name="e-kontakt" value="personal"><span>Personalvermittlung<small>Vermittlung in Stellen</small></span></label><label class="option"><input type="checkbox" name="e-kontakt" value="praxis"><span>Praxispartner<small>Themen und Daten für weitere Arbeiten</small></span></label></div></div>
+  </div>
+</section>
+
+<section class="abschnitt"><h2><span class="nummer">7</span>Bestätigen und absenden</h2>
   <label class="check"><input type="checkbox"><span>Ich bin Autor:in der Arbeit. Bei Gruppenarbeiten sind alle Beteiligten einverstanden und oben als Autor:innen genannt. <span class="pflicht">*</span></span></label>
   <label class="check"><input type="checkbox"><span>Die Kurzfassung enthält keine personenbezogenen Daten. Ein Ethikvotum ist genannt, wo eines nötig war. <span class="pflicht">*</span></span></label>
   <label class="check"><input type="checkbox"><span>Falls ich Daten Dritter genutzt habe (z. B. einer Krankenkasse): Der Datengeber ist mit der Veröffentlichung dieser Kurzfassung einverstanden. Das gilt auch bei einem Sperrvermerk – gesperrt ist dann nur der Volltext. <span class="pflicht">*</span></span></label>

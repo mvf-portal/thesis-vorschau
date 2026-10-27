@@ -44,6 +44,20 @@
   }
   zaehlerAnbinden(document);
 
+  // Fenster „Volltext anfragen / Frage“ (Seite einer Arbeit) und
+  // „Kontakt aufnehmen“ (Profilseite) – beide heissen #anfrage
+  const dlg = $("#anfrage");
+  function oeffnen(worum) {
+    if (!dlg) return;
+    const r = $(`input[name="worum"][value="${worum}"]`, dlg);
+    if (r) r.checked = true;
+    if (typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
+  }
+  $$("[data-dialog]").forEach(b => b.addEventListener("click", () => oeffnen(b.dataset.dialog)));
+  if (location.hash === "#anfrage") oeffnen("volltext");
+  if (location.hash === "#frage") oeffnen("frage");
+  if (location.hash === "#kontakt") oeffnen("kontakt");
+
   // Sprungliste: aktiven Abschnitt markieren
   const toc = $$(".toc a");
   if (toc.length && "IntersectionObserver" in window) {
@@ -116,7 +130,7 @@
       return `<article class="karte">
   <div class="karte-oben"><div class="pillen">${pillen}</div><span class="datum">Abgeschlossen ${esc(w.abschluss_text)}</span></div>
   <h3><a href="${seite}">${esc(w.titel)}</a></h3>
-  <p class="wer">${esc(w.namen)} · ${esc(w.hs)} · ${esc(w.sg)}</p>
+  <p class="wer">${w.personen.map(p => `<a href="profil/${p.slug}.html">${esc(p.name)}</a>`).join(", ")} · ${esc(w.hs)} · ${esc(w.sg)}</p>
   <p class="ergebnis"><b>Ergebnis:</b> ${esc(w.ergebnis)}</p>
   <ul class="stichwoerter" aria-label="Stichwörter">${stw}</ul>
   <details><summary>Strukturierte Kurzfassung</summary>
@@ -185,22 +199,77 @@
     zeigen();
   }
 
+  // ---- Profile ------------------------------------------------------------
+  const profilEl = $("#profil-daten");
+  if (profilEl) profilListe(JSON.parse(profilEl.textContent));
+
+  function profilListe(D) {
+    const form = $("#pfilter"), feld = $("#pq");
+    const P = D.profile, H = D.hubs;
+    P.forEach(p => {
+      p._themen = [...new Set(p.arbeiten.flatMap(a => a.hubs))];
+      p._woerter = falten([p.name, p.status, p.kurz, p.sucht, p.schwerpunkte.join(" "), p.methoden.join(" "),
+        p.arbeiten.map(a => a.titel + " " + a.art).join(" "), p._themen.map(h => H[h].name).join(" ")].join(" "))
+        .split(/[^a-z0-9]+/).filter(Boolean);
+    });
+    const kat = p => ({ offen: D.gruppen.map(g => g.k).filter(k => p.kontakt[k]), thema: p._themen });
+    function auswahl() {
+      return { offen: $$('input[name="offen"]:checked', form).map(i => i.value), thema: $$('input[name="thema"]:checked', form).map(i => i.value) };
+    }
+    function passt(p, s, tokens, ausser) {
+      const k = kat(p);
+      for (const g of ["offen", "thema"]) {
+        if (g === ausser || !s[g].length) continue;
+        if (!s[g].some(x => k[g].includes(x))) return false;
+      }
+      return tokens.every(t => t.length <= 2 ? p._woerter.includes(t) : p._woerter.some(x => x.startsWith(t)));
+    }
+    function karte(p) {
+      const offen = D.gruppen.filter(g => p.kontakt[g.k]);
+      const kontakt = offen.length
+        ? `<ul class="kontaktwunsch kompakt" aria-label="Offen für Kontakt durch">${offen.map(g => `<li class="kontakt-ja">${esc(g.t)} <span class="zeichen" aria-hidden="true">✓</span></li>`).join("")}</ul>`
+        : '<p class="keiner">Derzeit kein Kontakt gewünscht</p>';
+      const arb = p.arbeiten.map(a => `<a href="arbeit/${a.nr}.html">${esc(a.art)}</a>`).join(", ");
+      return `<article class="profilkarte">
+  <div class="kopf"><span class="avatar klein" aria-hidden="true">${esc(p.initialen)}</span>
+    <div><h3><a href="profil/${p.slug}.html">${esc(p.name)}</a></h3><p class="status">${esc(p.status)}</p></div></div>
+  <p class="kurz">${esc(p.kurz)}</p>
+  ${p.sucht ? `<p class="arbeit-zeile"><b>Sucht:</b> ${esc(p.sucht)}</p>` : ""}
+  <p class="arbeit-zeile">Im Portal: ${arb}</p>
+  ${kontakt}
+</article>`;
+    }
+    function zeigen() {
+      const s = auswahl();
+      const tokens = falten(feld.value).split(/[^a-z0-9]+/).filter(Boolean);
+      const treffer = P.filter(p => passt(p, s, tokens));
+      $("#profilliste").innerHTML = treffer.length ? treffer.map(karte).join("")
+        : '<div class="leer-hinweis">Kein Profil passt zu dieser Auswahl.</div>';
+      $("#p-treffer").textContent = treffer.length === P.length ? `${P.length} Profile` : `${treffer.length} von ${P.length} Profilen`;
+      ["offen", "thema"].forEach(g => {
+        const basis = P.filter(p => passt(p, s, tokens, g));
+        $$(`input[name="${g}"]`, form).forEach(i => {
+          const n = basis.filter(p => kat(p)[g].includes(i.value)).length;
+          const z = $(`[data-n="${g}|${i.value}"]`, form);
+          if (z) z.textContent = n;
+          i.closest(".wahl").classList.toggle("leer", n === 0 && !i.checked);
+        });
+      });
+      const sum = $('[data-zusammenfassung="thema"]', form);
+      const gew = $$('input[name="thema"]:checked', form).length;
+      sum.textContent = gew ? `${gew} gewählt` : "Alle Themen";
+    }
+    form.addEventListener("change", zeigen);
+    feld.addEventListener("input", zeigen);
+    $("#p-zurueck").addEventListener("click", () => { $$("input:checked", form).forEach(i => { i.checked = false; }); feld.value = ""; zeigen(); });
+    zeigen();
+  }
+
   // ---- Seite einer Arbeit -------------------------------------------------
   const arbeitEl = $("#arbeit-daten");
   if (arbeitEl) arbeitSeite(JSON.parse(arbeitEl.textContent));
 
   function arbeitSeite(w) {
-    const dlg = $("#anfrage");
-    function oeffnen(worum) {
-      if (!dlg) return;
-      const r = $(`input[name="worum"][value="${worum}"]`, dlg);
-      if (r) r.checked = true;
-      if (typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
-    }
-    $$("[data-dialog]").forEach(b => b.addEventListener("click", () => oeffnen(b.dataset.dialog)));
-    if (location.hash === "#anfrage") oeffnen("volltext");
-    if (location.hash === "#frage") oeffnen("frage");
-
     $$("[data-kopieren]").forEach(b => b.addEventListener("click", () =>
       kopieren($("#" + b.dataset.kopieren).textContent, "Zitierangabe kopiert (Vancouver)")));
 
@@ -290,6 +359,10 @@
     };
     ethik.addEventListener("change", ethikNeu);
 
+    const profilJa = $("#e-profil"), profilFelder = $("#profil-felder");
+    const profilNeu = () => { profilFelder.hidden = !profilJa.checked; };
+    profilJa.addEventListener("change", profilNeu);
+
     const andereDaten = $('input[name="e-daten"][value="Andere"]', form), andereT = $("#e-daten-andere");
     andereDaten.addEventListener("change", () => { andereT.hidden = !andereDaten.checked; });
 
@@ -344,7 +417,7 @@
       $("#speicherstand").textContent = "Ihr letzter Zwischenstand wurde wiederhergestellt.";
     }
     laden();
-    artNeu(); hubsNeu(); ethikNeu(); volltextNeu(); stwNeu();
+    artNeu(); hubsNeu(); ethikNeu(); volltextNeu(); stwNeu(); profilNeu();
     hsA.hidden = hs.value !== "andere"; andereT.hidden = !andereDaten.checked;
     zaehlerAnbinden(form);
     let warte;

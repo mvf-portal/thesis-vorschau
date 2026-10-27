@@ -344,3 +344,39 @@ table.schema{ width:100%; border-collapse:collapse; background:var(--card); bord
 .toast{ position:fixed; right:16px; bottom:16px; z-index:95; background:var(--ink); color:var(--paper); padding:9px 14px; border-radius:8px; font-size:14px; max-width:min(520px, calc(100vw - 32px)); }
 .toast[hidden]{ display:none; }
 @media print{ .netz, .vorschau-band, .portalkopf, .seitenspalte, .fuss, .testband{ display:none !important; } }
+
+/* Profile und Kontaktwuensche (Talentzugang, 27.10.2026) */
+.profil-oben{ display:flex; align-items:center; gap:18px; margin-top:6px; }
+.profil-oben h1{ margin:0; font-size:clamp(26px, 3.2vw, 34px); }
+.avatar{ display:inline-grid; place-items:center; width:72px; height:72px; flex:0 0 72px; border-radius:50%; background:var(--brand); color:#fff; font-size:26px; font-weight:700; letter-spacing:.02em; }
+.avatar.klein{ width:46px; height:46px; flex-basis:46px; font-size:17px; }
+.sucht{ background:var(--gold-tint); border-radius:8px; padding:8px 12px; margin:10px 0 0 !important; }
+.stichwoerter span{ display:inline-block; font-size:13px; padding:2px 9px; border:1px solid var(--line); border-radius:6px; color:var(--ink-soft); background:var(--card-2); }
+.kontaktwunsch{ list-style:none; margin:0 0 12px; padding:0; display:grid; gap:6px; }
+.kontaktwunsch li{ display:flex; align-items:flex-start; gap:10px; padding:8px 10px; border-radius:8px; border:1px solid var(--line-soft); font-size:14px; }
+.kontaktwunsch li svg{ width:20px; height:20px; flex:0 0 20px; margin-top:1px; }
+.kontaktwunsch li b{ display:block; }
+.kontaktwunsch li small{ display:block; color:var(--ink-faint); font-size:12.5px; }
+.kontaktwunsch .zeichen{ margin-left:auto; font-weight:700; font-size:16px; }
+.kontaktwunsch .kontakt-ja{ background:var(--petrol-tint); border-color:color-mix(in srgb, var(--petrol) 35%, transparent); color:var(--ink); }
+.kontaktwunsch .kontakt-ja svg, .kontaktwunsch .kontakt-ja .zeichen{ color:var(--petrol); }
+.kontaktwunsch .kontakt-nein{ color:var(--ink-faint); }
+.kontaktwunsch.kompakt{ display:flex; flex-wrap:wrap; gap:6px; margin:10px 0 0; }
+.kontaktwunsch.kompakt li{ padding:3px 9px; border-radius:999px; font-size:12.5px; gap:5px; align-items:center; }
+.kontaktwunsch.kompakt li svg{ width:15px; height:15px; flex-basis:15px; margin:0; }
+.kontaktwunsch.kompakt .zeichen{ font-size:13px; margin-left:2px; }
+.kontaktwunsch.kompakt .kontakt-nein{ display:none; }
+.profilraster{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:14px; }
+@media (max-width:760px){ .profilraster{ grid-template-columns:1fr; } }
+.profilkarte{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px 18px; box-shadow:var(--shadow); display:flex; flex-direction:column; }
+.profilkarte .kopf{ display:flex; gap:12px; align-items:center; }
+.profilkarte h3{ margin:0; font-size:17px; }
+.profilkarte h3 a{ color:var(--ink); text-decoration:none; }
+.profilkarte h3 a:hover{ color:var(--brand); text-decoration:underline; }
+.profilkarte .status{ margin:2px 0 0; font-size:13px; color:var(--ink-faint); }
+.profilkarte p.kurz{ margin:10px 0 0; font-size:14.5px; flex:1; }
+.profilkarte .arbeit-zeile{ margin:10px 0 0; font-size:13px; color:var(--ink-soft); }
+.profilkarte .keiner{ margin:10px 0 0; font-size:12.5px; color:var(--ink-faint); }
+.wahl svg{ width:16px; height:16px; flex:0 0 16px; margin-top:3px; color:var(--petrol); }
+.gruppe-ic{ width:20px; height:20px; vertical-align:-4px; margin-right:6px; color:var(--petrol); }
+.steckbrief dd a{ color:var(--brand); }
