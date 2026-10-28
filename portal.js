@@ -22,6 +22,8 @@
 
   // ---- Allgemein ---------------------------------------------------------
   document.addEventListener("click", e => {
+    const vh = e.target.closest("[data-vorschau-hinweis]");
+    if (vh) { e.preventDefault(); toast(vh.dataset.vorschauHinweis, 5000); }
     const v = e.target.closest("[data-vorschau]");
     if (v) { e.preventDefault(); toast("Vorschau: Hier läge der Volltext. Die Beispielarbeiten haben keinen."); }
     const l = e.target.closest("[data-link-kopieren]");
@@ -57,6 +59,18 @@
   if (location.hash === "#anfrage") oeffnen("volltext");
   if (location.hash === "#frage") oeffnen("frage");
   if (location.hash === "#kontakt") oeffnen("kontakt");
+
+  // Seitenspalte wandert nur mit, wenn sie ganz in den Bildschirm passt
+  // (Rueckmeldung Mariann Stegmaier, 28.10.2026)
+  function spalteAnpassen() {
+    $$(".seitenspalte:not(.lang), .klebt").forEach(s => {
+      s.classList.remove("frei");
+      s.classList.toggle("frei", s.getBoundingClientRect().height > window.innerHeight - 32);
+    });
+  }
+  window.addEventListener("resize", spalteAnpassen);
+  document.addEventListener("toggle", spalteAnpassen, true);
+  spalteAnpassen();
 
   // Sprungliste: aktiven Abschnitt markieren
   const toc = $$(".toc a");
@@ -166,12 +180,12 @@
           i.closest(".wahl").classList.toggle("leer", n === 0 && !i.checked);
         });
       });
-      ["hub", "hs", "daten"].forEach(g => {
+      GRUPPEN.forEach(g => {
         const sum = $(`[data-zusammenfassung="${g}"]`, form);
-        const gew = $$(`input[name="${g}"]:checked`, form);
-        const alle = g === "hub" ? "Alle Themen" : g === "hs" ? "Alle Hochschulen" : "Alle";
-        sum.textContent = gew.length ? `${gew.length} gewählt` : alle;
+        const gew = $$(`input[name="${g}"]:checked`, form).length;
+        if (sum) sum.textContent = gew ? ` · ${gew} gewählt` : "";
       });
+      spalteAnpassen();
       const url = new URL(location.href);
       if (feld.value.trim()) url.searchParams.set("q", feld.value.trim()); else url.searchParams.delete("q");
       history.replaceState(null, "", url);

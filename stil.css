@@ -383,3 +383,40 @@ table.schema{ width:100%; border-collapse:collapse; background:var(--card); bord
 
 .reihe3.plz-ort{ grid-template-columns:1fr 2fr 1.4fr; }
 @media (max-width:640px){ .reihe3.plz-ort{ grid-template-columns:1fr; } }
+
+/* Rueckmeldung Mariann Stegmaier, 28.10.2026 */
+.portalname{ display:flex; align-items:center; gap:12px; }
+.portalname img{ width:40px; height:40px; flex:0 0 40px; border-radius:9px; }
+.portalname .tag{ margin-left:2px; color:var(--gold-text); background:var(--gold-tint); border-color:color-mix(in srgb, var(--gold) 60%, transparent); align-self:center; }
+.einstieg.blau{ background:radial-gradient(110% 150% at 85% -30%, #0051A1 0%, transparent 60%), #0A3F7E; color:#fff; border-bottom:0; }
+.einstieg.blau .overline, .einstieg.blau .suche label{ color:#C9D8EC; }
+.einstieg.blau .lede{ color:#E2EBF6; }
+.einstieg.blau .gepruft{ color:#fff; }
+.einstieg.blau .suche small, .einstieg.blau .kennzahlen{ color:#C9D8EC; }
+.einstieg.blau .kennzahlen b{ color:#fff; }
+.einstieg.blau .suche-zeile{ border-color:transparent; box-shadow:0 18px 40px -20px rgba(0,0,0,.6); background:#fff; }
+.einstieg.blau .suche-zeile input{ color:#111; }
+.einstieg.blau .suche-zeile button{ background:var(--gold); color:#2A2207; }
+details.fgruppe{ border-top:1px solid var(--line-soft); margin:0; padding:2px 0; }
+details.fgruppe:first-of-type{ border-top:0; }
+details.fgruppe > summary{ cursor:pointer; list-style:none; display:flex; align-items:center; padding:9px 0; margin:0; }
+details.fgruppe > summary::-webkit-details-marker{ display:none; }
+details.fgruppe > summary::after{ content:"▾"; margin-left:auto; color:var(--ink-faint); font-size:12px; }
+details.fgruppe[open] > summary::after{ content:"▴"; }
+details.fgruppe .gewaehlt{ color:var(--brand); letter-spacing:0; text-transform:none; margin-left:4px; }
+.fgruppe-innen{ padding:0 0 10px; }
+.seitenspalte.frei{ position:static; }
+.dialog-innen{ position:relative; }
+.dialog-innen .schliessen{ position:absolute; top:10px; right:12px; width:36px; height:36px; border:0; border-radius:8px; background:none; color:var(--ink-soft); font-size:26px; line-height:1; cursor:pointer; }
+.dialog-innen .schliessen:hover{ background:var(--brand-tint); color:var(--ink); }
+.dialog-innen h2{ padding-right:40px; }
+.profilknoepfe{ display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 0; }
+.profilknopf{ display:inline-flex; align-items:center; gap:8px; padding:6px 12px 6px 8px; border-radius:8px; border:1px solid var(--line); background:var(--card); color:var(--ink); font-size:14px; font-weight:700; text-decoration:none; }
+.profilknopf:hover{ border-color:var(--brand); }
+.profilknopf .orcid{ width:24px; height:24px; font-size:11px; margin:0; vertical-align:0; }
+.profilknopf .in{ display:inline-grid; place-items:center; width:24px; height:24px; border-radius:5px; background:#0A66C2; color:#fff; font-size:13px; font-weight:700; }
+
+.seitenspalte.lang{ position:static; align-self:stretch; align-content:start; }
+.klebt{ position:sticky; top:16px; }
+.klebt.frei{ position:static; }
+@media (max-width:900px){ .klebt{ position:static; } }

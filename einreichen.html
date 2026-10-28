@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex,nofollow,noarchive">
 <title>Arbeit einreichen – Thesis-Portal (Vorschau)</title>
 <meta name="description" content="Vorschau des Thesis-Portals von DNVF und Monitor Versorgungsforschung.">
-<link rel="icon" href="logo/hub-icon.svg" type="image/svg+xml">
+<link rel="icon" href="logo/thesis-icon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="stil.css">
 <meta name="theme-color" content="#14202E">
 </head>
@@ -22,7 +22,7 @@
 <div class="vorschau-band" role="note"><div class="wrap"><b>Vorschau für die Gruppe der Hochschullehrenden im DNVF.</b> Nicht öffentlich verlinkt, für Suchmaschinen gesperrt. Alle Arbeiten, Personen, Ergebnisse und DOIs sind erfunden. Gelb markierte Werte in eckigen Klammern sind noch festzulegen.</div></div>
 <header class="portalkopf">
   <div class="wrap">
-    <a class="portalname" href="index.html"><small>NACHWUCHSFORSCHUNG</small><b>Thesis-Portal</b><span class="tag">VORSCHAU</span></a>
+    <a class="portalname" href="index.html"><img src="logo/thesis-icon.svg" alt="" width="40" height="40"><span><small>NACHWUCHSFORSCHUNG</small><b>Thesis-Portal</b></span><span class="tag">VORSCHAU</span></a>
     <nav class="reiter" aria-label="Thesis-Portal"><a href="index.html">Arbeiten</a><a href="profile.html">Profile</a><a href="studierende.html">Für Studierende</a><a href="betreuende.html">Für Betreuende</a><a href="ueber.html">Über das Portal</a><a class="einreichen" href="einreichen.html" aria-current="page"><span class="plus" aria-hidden="true">+</span>Arbeit einreichen</a></nav>
   </div>
 </header>
@@ -66,7 +66,7 @@
       <div class="reihe" style="gap:0 8px"><select aria-label="Monat"><option>Januar</option><option>Februar</option><option>März</option><option>April</option><option>Mai</option><option>Juni</option><option>Juli</option><option>August</option><option>September</option><option>Oktober</option><option>November</option><option>Dezember</option></select><select aria-label="Jahr"><option>2026</option><option>2025</option><option>2024</option></select></div>
       <span class="hilfe">Monat der Bewertung, bei Dissertationen der Disputation. Aufgenommen werden Arbeiten der letzten <span class="offen" title="Noch festzulegen">[2]</span> Jahre.</span></div>
     <div class="feld"><label for="e-sprache">Sprache der Arbeit <span class="pflicht">*</span></label>
-      <select id="e-sprache"><option>Deutsch</option><option>Englisch</option><option>Andere</option></select>
+      <select id="e-sprache"><option>Deutsch</option><option>Englisch</option></select>
       <span class="hilfe">Die Kurzfassung schreiben Sie immer auf Deutsch.</span></div>
   </div>
   <div class="reihe">
@@ -82,14 +82,14 @@
 
 <section class="abschnitt"><h2><span class="nummer">3</span>Betreuung</h2>
   <div class="reihe">
-    <div class="feld"><label for="e-b1">Erstbetreuung: Name <span class="pflicht">*</span></label><input id="e-b1" type="text"></div>
+    <div class="feld"><label for="e-b1">Erstbetreuung: Name und Titel <span class="pflicht">*</span></label><input id="e-b1" type="text" placeholder="z. B. Prof. Dr. Maria Muster"></div>
     <div class="feld"><label for="e-b1m">Erstbetreuung: E-Mail <span class="pflicht">*</span></label><input id="e-b1m" type="email"></div>
   </div>
   <div class="reihe">
-    <div class="feld"><label for="e-b2">Zweitbetreuung: Name (freiwillig)</label><input id="e-b2" type="text"></div>
+    <div class="feld"><label for="e-b2">Zweitbetreuung: Name und Titel (freiwillig)</label><input id="e-b2" type="text" placeholder="z. B. Dr. Max Beispiel"></div>
     <div class="feld"><label for="e-b2m">Zweitbetreuung: E-Mail (freiwillig)</label><input id="e-b2m" type="email"></div>
   </div>
-  <p class="hinweis" style="margin-top:14px">Ihre Erstbetreuung bekommt nach dem Absenden eine E-Mail. Mit einem Klick bestätigt sie, dass Ihre Arbeit mindestens mit <span class="offen" title="Noch festzulegen">[Mindestnote]</span> bewertet wurde und dass sie die Arbeit für das Portal empfiehlt. Ihre Note selbst wird nicht gespeichert.</p>
+  <p class="hinweis" style="margin-top:14px">Ihre Erstbetreuung bekommt nach dem Absenden eine E-Mail. Mit einem Klick bestätigt sie, dass Ihre Arbeit mindestens mit <span class="offen" title="Noch festzulegen">[Mindestnote]</span> bewertet wurde, dass die Kurzfassung die Arbeit zutreffend wiedergibt und dass sie die Arbeit für das Portal empfiehlt. Sie kann auch um eine Überarbeitung der Kurzfassung bitten. Ihre Note selbst wird nicht gespeichert.</p>
 </section>
 
 <section class="abschnitt"><h2><span class="nummer">4</span>Inhalt der Arbeit</h2>
@@ -139,16 +139,17 @@
   <p style="margin:6px 0 0">Mit einem Profil stellen Sie sich vor. Alle Ihre Arbeiten im Portal erscheinen dort gesammelt. Ob Sie ein Profil anlegen und wer Sie darüber erreichen darf, entscheiden Sie selbst. Das hat keinen Einfluss auf die Aufnahme Ihrer Arbeit. <a href="profile.html">Beispiele ansehen</a></p>
   <label class="check"><input type="checkbox" id="e-profil"><span><b>Ja, ich möchte ein Profil im Thesis-Portal anlegen.</b></span></label>
   <div id="profil-felder" hidden>
-    <div class="feld"><label for="e-p-status">Aktueller Stand</label><input id="e-p-status" type="text" placeholder="z. B. Abschluss M. Sc. Versorgungsforschung, März 2026"></div>
+    <div class="feld"><label for="e-p-status">Status der Ausbildung</label><input id="e-p-status" type="text" placeholder="z. B. Abschluss M. Sc. Versorgungsforschung, März 2026"></div>
     <div class="feld"><label for="e-p-kurz">Über mich <span class="zaehler" data-zaehler-fuer="e-p-kurz">0 / 400</span></label>
       <textarea id="e-p-kurz" data-max="400" placeholder="Zwei, drei Sätze: woran Sie arbeiten, was Sie interessiert"></textarea></div>
     <div class="reihe">
       <div class="feld"><label for="e-p-schwer">Schwerpunkte</label><input id="e-p-schwer" type="text" placeholder="durch Kommas getrennt, z. B. Langzeitpflege, Routinedaten"></div>
-      <div class="feld"><label for="e-p-meth">Methoden</label><input id="e-p-meth" type="text" placeholder="z. B. Mehrebenenmodelle, R, Interviews"></div>
+      <div class="feld"><label for="e-p-meth">Methoden</label><input id="e-p-meth" type="text" placeholder="durch Kommas getrennt, z. B. Mehrebenenmodelle, R, Interviews"></div>
     </div>
+    <div class="feld"><label for="e-p-linkedin">LinkedIn-Profil (freiwillig)</label><input id="e-p-linkedin" type="url" placeholder="https://www.linkedin.com/in/…"><span class="hilfe">Erscheint als Knopf neben Ihrem Namen, wie Ihre ORCID.</span></div>
     <div class="feld"><label for="e-p-sucht">Ich suche (freiwillig)</label><input id="e-p-sucht" type="text" placeholder="z. B. Promotion ab 2027, Stelle in der Versorgungsforschung"></div>
     <div class="feld"><span class="label">Wer darf Sie über das Portal kontaktieren?</span>
-      <span class="hilfe" style="margin:0 0 6px">Für jede Gruppe einzeln. Ihre E-Mail-Adresse bleibt verborgen, bis Sie antworten. Sie können das jederzeit ändern oder das Profil löschen.</span>
+      <span class="hilfe" style="margin:0 0 6px">Für jede Gruppe einzeln. Ihre E-Mail-Adresse bleibt verborgen, bis Sie antworten. Ändern oder löschen können Sie Ihr Profil jederzeit über einen persönlichen Link, den Sie sich per E-Mail schicken lassen. Ein Passwort brauchen Sie nicht.</span>
       <div class="optionen"><label class="option"><input type="checkbox" name="e-kontakt" value="hochschulen"><span>Hochschulen und Forschung<small>Promotion, Stellen in Projekten</small></span></label><label class="option"><input type="checkbox" name="e-kontakt" value="arbeitgeber"><span>Arbeitgeber<small>Stellen, Traineeprogramme, Praktika</small></span></label><label class="option"><input type="checkbox" name="e-kontakt" value="personal"><span>Personalvermittlung<small>Vermittlung in Stellen</small></span></label><label class="option"><input type="checkbox" name="e-kontakt" value="praxis"><span>Praxispartner<small>Themen und Daten für weitere Arbeiten</small></span></label></div></div>
   </div>
 </section>
@@ -157,6 +158,7 @@
   <p style="margin:6px 0 0">Monitor Versorgungsforschung ist die Fachzeitschrift hinter dem Portal. Die Angebote hier sind freiwillig und haben keinen Einfluss auf die Aufnahme Ihrer Arbeit.</p>
   <label class="check"><input type="checkbox" id="e-probe"><span><b>Ja, ich möchte ein kostenloses Probe-Abo von MVF erhalten:</b> eine Ausgabe. Das Probe-Abo endet automatisch, ohne Kündigung und ohne Folgekosten.</span></label>
   <label class="check"><input type="checkbox" id="e-studabo"><span><b>Ja, ich möchte ein Studierenden-Abo bestellen:</b> 6 Ausgaben im Jahr für 90 € zzgl. 9,99 € Versand innerhalb Deutschlands. Bestellt wird anschließend über das <a href="https://www.monitor-versorgungsforschung.de/internals/abonnement/" target="_blank" rel="noopener">Abo-Formular von MVF</a>, mit Studierendennachweis.</span></label>
+  <label class="check"><input type="checkbox" id="e-nl"><span><b>Ja, ich möchte den kostenlosen Newsletter der Knowledge-Hubs erhalten, die ich oben für meine Arbeit gewählt habe.</b> Sie bekommen eine E-Mail mit einem Bestätigungslink. Erst nach dieser Bestätigung tragen wir Sie ein. Abmelden können Sie sich in jedem Newsletter.</span></label>
   <div id="abo-felder" hidden>
     <p class="klein" style="margin:12px 0 0">Für den Versand der Hefte brauchen wir Ihre Postanschrift. Sie wird nur dafür genutzt und nicht veröffentlicht.</p>
     <div class="feld"><label for="e-strasse">Straße und Hausnummer</label><input id="e-strasse" type="text" autocomplete="street-address"></div>
@@ -191,7 +193,7 @@
     </nav>
   </div>
 </footer>
-<div class="testband">VORSCHAU – Beispieldaten, Stand 27.10.2026</div>
+<div class="testband">VORSCHAU – Beispieldaten, Stand 28.10.2026</div>
 <div class="toast" id="toast" role="status" hidden></div>
 <script src="portal.js" defer></script>
 </body>
