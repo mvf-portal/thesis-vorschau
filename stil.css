@@ -427,3 +427,16 @@ details.fgruppe .gewaehlt{ color:var(--brand); letter-spacing:0; text-transform:
 
 .leitsatz-zusatz{ display:block; margin-top:4px; font-size:.78em; font-weight:400; color:var(--ink-soft); }
 .einstieg.blau .leitsatz-zusatz{ color:#E2EBF6; }
+
+/* Hero der Startseite nach Marianns Entwurf (28.10.2026): flaches Blau, Leitsatz weiss */
+.einstieg.blau{ background:#0051A1; }
+.einstieg.blau .wrap{ padding-top:40px; padding-bottom:44px; }
+.einstieg.blau .leitsatz{ color:#fff; margin-top:22px; }
+.einstieg.blau .lede{ margin-top:8px; }
+.gepruft-zeile{ margin:16px 0 0; font-size:14.5px; color:var(--ink-soft); }
+.einstieg.blau .gepruft-zeile{ color:#D6E2F2; }
+.einstieg.blau .suche{ margin-top:26px; }
+.einstieg.blau .suche{ max-width:860px; }
+.einstieg.blau .suche-zeile{ padding:0; gap:0; overflow:hidden; border-radius:10px; }
+.einstieg.blau .suche-zeile input{ padding:17px 20px; font-size:17px; }
+.einstieg.blau .suche-zeile button{ border-radius:0; padding:0 30px; font-size:16px; }
