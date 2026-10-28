@@ -420,3 +420,7 @@ details.fgruppe .gewaehlt{ color:var(--brand); letter-spacing:0; text-transform:
 .klebt{ position:sticky; top:16px; }
 .klebt.frei{ position:static; }
 @media (max-width:900px){ .klebt{ position:static; } }
+
+/* Leitsatz unter der Ueberschrift (28.10.2026) */
+.leitsatz{ margin:10px 0 0; font-size:clamp(19px, 2.2vw, 23px); font-weight:700; color:var(--brand-deep); max-width:36em; }
+.einstieg.blau .leitsatz{ color:var(--gold); }
