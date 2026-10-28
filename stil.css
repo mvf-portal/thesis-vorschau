@@ -424,3 +424,6 @@ details.fgruppe .gewaehlt{ color:var(--brand); letter-spacing:0; text-transform:
 /* Leitsatz unter der Ueberschrift (28.10.2026) */
 .leitsatz{ margin:10px 0 0; font-size:clamp(19px, 2.2vw, 23px); font-weight:700; color:var(--brand-deep); max-width:36em; }
 .einstieg.blau .leitsatz{ color:var(--gold); }
+
+.leitsatz-zusatz{ display:block; margin-top:4px; font-size:.78em; font-weight:400; color:var(--ink-soft); }
+.einstieg.blau .leitsatz-zusatz{ color:#E2EBF6; }
