@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>Arbeit einreichen – MVF-Edition Ausgezeichnet (Vorschau B)</title>
+<meta name="description" content="Vorschau der MVF-Edition Ausgezeichnet von Monitor Versorgungsforschung in Kooperation mit dem DNVF.">
+<link rel="icon" href="logo/hub-icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="stil.css">
+<meta name="theme-color" content="#14202E">
+</head>
+<body>
+<nav class="netz" aria-label="Knowledge-Hubs">
+  <div class="wrap">
+    <a class="marke" href="https://knowledge-hubs.m-vf.de/"><img src="logo/hub-icon.svg" alt="" width="20" height="20"><span>KNOWLEDGE<b>-HUBS</b></span></a>
+    <a href="https://knowledge-hubs.m-vf.de/#themen">Alle Hubs</a>
+    <a class="nur-breit" href="https://knowledge-hubs.m-vf.de/ueber-die-hubs.html">Über die Hubs</a>
+    <span class="rechts">ein Angebot von <b>Monitor Versorgungsforschung</b></span>
+  </div>
+</nav>
+<div class="vorschau-band" role="note"><div class="wrap"><b>Vorschau, Variante B: „MVF-Edition Ausgezeichnet“</b> (kuratierte Reihe, Vorschlag vom 29.10.2026). Zum Vergleich: <a href="../index.html">Variante A: Thesis-Portal</a>. Nicht öffentlich verlinkt, für Suchmaschinen gesperrt. Alle Arbeiten, Personen, Ergebnisse und DOIs sind erfunden. Gelb markierte Werte in eckigen Klammern sind noch festzulegen.</div></div>
+<header class="portalkopf">
+  <div class="wrap">
+    <a class="portalname" href="index.html"><span class="siegel-gross" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M9.5 9l1.8 1.8 3.2-3.4"/><path d="M8.5 14l-2 7 5.5-3 5.5 3-2-7"/></svg></span><span><small>MVF-EDITION · GESUNDHEITSVERSORGUNG</small><b>Ausgezeichnet</b></span><span class="tag">VORSCHAU B</span></a>
+    <nav class="reiter" aria-label="MVF-Edition Ausgezeichnet"><a href="index.html">Arbeiten</a><a href="betreuende.html">Für Betreuende</a><a href="studierende.html">Für Studierende</a><a href="profile.html">Profile</a><a href="ueber.html">Über die Edition</a><a class="einreichen" href="empfehlen.html"><span class="plus" aria-hidden="true">+</span>Arbeit empfehlen</a></nav>
+  </div>
+</header>
+<section class="einstieg"><div class="wrap">
+  <p class="overline">MVF-Edition Ausgezeichnet</p>
+  <h1>Arbeit einreichen</h1>
+  
+  <p class="lede">Ihre Betreuung hat Ihre Arbeit für die Edition empfohlen. Hier reichen Sie sie mit einer Kurzfassung nach festem Schema ein. Nach dem Absenden bekommt Ihre Erstbetreuung die Kurzfassung zur Bestätigung und gibt ihr Geleitwort frei. Danach entscheiden Herausgeber und Verlag von Monitor Versorgungsforschung über die Aufnahme. Bitte lesen Sie vorher <a href="studierende.html">Ablauf, Kriterien und Vorlagen für Studierende</a>.</p>
+  
+</div></section>
+<main><div class="wrap" style="max-width:860px">
+<div class="hinweis einladung"><p><b>Persönliche Einladung (Beispiel):</b> Prof. Dr. N. N., Universität A, hat Ihre Masterarbeit am 14. Oktober 2026 für die MVF-Edition Ausgezeichnet empfohlen. Dieses Formular erreichen Sie nur über den Link in Ihrer Einladung. Angaben zur Arbeit und zur Betreuung sind aus der Empfehlung übernommen und lassen sich korrigieren.</p></div>
+<div class="blauer-kasten">
+  <h2>Das brauchen Sie (etwa 15 Minuten)</h2>
+  <ul>
+    <li>Angaben zur Arbeit: Titel, Art, Abschluss, Hochschule, Studiengang</li>
+    <li>Namen und E-Mail-Adressen Ihrer Erstbetreuung und gegebenenfalls Ihrer Mitautor:innen</li>
+    <li>Ihre Kurzfassung nach dem <a href="studierende.html#kurzfassung">festen Schema</a> – am besten vorher in der <a href="studierende.html#vorlagen">Word-Vorlage</a> schreiben und hier einfügen</li>
+    <li>Gegebenenfalls das PDF und die Zustimmung des Datengebers</li>
+  </ul>
+  <p>Ihre Eingaben werden automatisch in diesem Browser gespeichert. Sie bleiben erhalten, wenn Sie das Fenster schließen. Sie gehen verloren, wenn Sie das Gerät wechseln, ein privates Fenster nutzen oder die Browserdaten löschen.</p>
+</div>
+<p class="klein">Felder mit <span class="pflicht">*</span> sind Pflichtfelder.</p>
+<form class="formular" id="einreichung" onsubmit="return false" aria-label="Arbeit einreichen (Vorschau ohne Funktion)">
+
+<section class="abschnitt"><h2><span class="nummer">1</span>Autor:innen</h2>
+  <div id="autoren"></div>
+  <button class="knopf leise" type="button" id="autor-plus" hidden><span class="plus" aria-hidden="true">+</span>Weitere Autor:in hinzufügen</button>
+</section>
+
+<section class="abschnitt"><h2><span class="nummer">2</span>Zur Arbeit</h2>
+  <div class="feld"><label for="e-titel">Titel der Arbeit <span class="pflicht">*</span></label><input id="e-titel" type="text"></div>
+  <div class="reihe">
+    <div class="feld"><label for="e-art">Art der Arbeit <span class="pflicht">*</span></label>
+      <select id="e-art"><option selected>Masterarbeit</option><option>Dissertation</option><option>Bachelorarbeit (Ausnahme)</option></select>
+      <span class="hilfe">Bachelorarbeiten nur, wenn die Betreuung die Ausnahme in der Empfehlung begründet hat.</span></div>
+    <div class="feld" id="unterart-feld" hidden><label for="e-unterart">Welche Art von Arbeit? <span class="pflicht">*</span></label>
+      <select id="e-unterart"><option>Hausarbeit</option><option>Projektarbeit</option><option>Seminararbeit</option><option>Workshop-Arbeit</option><option>Poster</option><option>Andere</option></select>
+      <span class="hilfe">Gruppenarbeit? Mitautor:innen bitte oben unter 1 hinzufügen.</span></div>
+  </div>
+  <div class="reihe">
+    <div class="feld"><span class="label">Abgeschlossen im <span class="pflicht">*</span></span>
+      <div class="reihe" style="gap:0 8px"><select aria-label="Monat"><option>Januar</option><option>Februar</option><option>März</option><option>April</option><option>Mai</option><option>Juni</option><option>Juli</option><option>August</option><option>September</option><option>Oktober</option><option>November</option><option>Dezember</option></select><select aria-label="Jahr"><option>2026</option><option>2025</option><option>2024</option></select></div>
+      <span class="hilfe">Monat der Bewertung, bei Dissertationen der Disputation. Aufgenommen werden Arbeiten der letzten <span class="offen" title="Noch festzulegen">[2]</span> Jahre.</span></div>
+    <div class="feld"><label for="e-sprache">Sprache der Arbeit <span class="pflicht">*</span></label>
+      <select id="e-sprache"><option>Deutsch</option><option>Englisch</option></select>
+      <span class="hilfe">Die Kurzfassung schreiben Sie immer auf Deutsch.</span></div>
+  </div>
+  <div class="reihe">
+    <div class="feld"><label for="e-hs">Hochschule <span class="pflicht">*</span></label>
+      <select id="e-hs"><option>Hochschule A</option><option>Hochschule B</option><option>Hochschule C</option><option>Hochschule D</option><option>Hochschule E</option><option value="andere">+ Andere Hochschule eintragen</option></select>
+      <input id="e-hs-andere" type="text" placeholder="Name der Hochschule" hidden style="margin-top:6px"></div>
+    <div class="feld"><label for="e-sg">Studiengang <span class="pflicht">*</span></label><input id="e-sg" type="text" placeholder="z. B. M. Sc. Versorgungsforschung"></div>
+  </div>
+  <div class="feld"><span class="label">Thema: passende Knowledge-Hubs <span class="pflicht">*</span> (1 bis 3) <span class="zaehler" id="hub-zaehler">0 von 3 gewählt</span></span>
+    <div class="hubwahl"><p class="unter">VERSORGUNGSTHEMEN</p><label class="wahl"><input type="checkbox" name="e-hub" value="wissen"><span class="punkt"></span><span>Versorgungsforschung</span></label><label class="wahl"><input type="checkbox" name="e-hub" value="ki"><span class="punkt"></span><span>Digitalisierung, KI &amp; Gesundheit</span></label><label class="wahl"><input type="checkbox" name="e-hub" value="gender"><span class="punkt"></span><span>Geschlechtersensible Medizin</span></label><label class="wahl"><input type="checkbox" name="e-hub" value="longevity"><span class="punkt"></span><span>Gesundes Altern &amp; Longevity</span></label><label class="wahl"><input type="checkbox" name="e-hub" value="healthliteracy"><span class="punkt"></span><span>Gesundheitskompetenz</span></label><label class="wahl"><input type="checkbox" name="e-hub" value="klima"><span class="punkt"></span><span>Hitze, Klima &amp; Gesundheit</span></label><label class="wahl"><input type="checkbox" name="e-hub" value="impfen"><span class="punkt"></span><span>Impfen &amp; Prävention</span></label><label class="wahl"><input type="checkbox" name="e-hub" value="ncd"><span class="punkt"></span><span>NCD/Chronische Krankheiten</span></label><label class="wahl"><input type="checkbox" name="e-hub" value="safety"><span class="punkt"></span><span>Patientensicherheit</span></label><label class="wahl"><input type="checkbox" name="e-hub" value="pflege"><span class="punkt"></span><span>Pflege &amp; Langzeitversorgung</span></label><label class="wahl"><input type="checkbox" name="e-hub" value="mental"><span class="punkt"></span><span>Psychische Gesundheit</span></label><p class="unter">KRANKHEITSGEBIETE</p><label class="wahl"><input type="checkbox" name="e-hub" value="adipositas"><span class="punkt krank"></span><span>Adipositas</span></label><label class="wahl"><input type="checkbox" name="e-hub" value="diabetes"><span class="punkt krank"></span><span>Diabetes</span></label><label class="wahl"><input type="checkbox" name="e-hub" value="kardio"><span class="punkt krank"></span><span>Kardiologie</span></label><label class="wahl"><input type="checkbox" name="e-hub" value="onkologie"><span class="punkt krank"></span><span>Onkologie</span></label></div>
+    <span class="hilfe">Die Arbeit erscheint in jedem gewählten Hub. Die Redaktion kann die Zuordnung anpassen.</span></div>
+</section>
+
+<section class="abschnitt"><h2><span class="nummer">3</span>Betreuung</h2>
+  <div class="reihe">
+    <div class="feld"><label for="e-b1">Erstbetreuung: Name und Titel <span class="pflicht">*</span></label><input id="e-b1" type="text" placeholder="z. B. Prof. Dr. Maria Muster"></div>
+    <div class="feld"><label for="e-b1m">Erstbetreuung: E-Mail <span class="pflicht">*</span></label><input id="e-b1m" type="email"></div>
+  </div>
+  <div class="reihe">
+    <div class="feld"><label for="e-b2">Zweitbetreuung: Name und Titel (freiwillig)</label><input id="e-b2" type="text" placeholder="z. B. Dr. Max Beispiel"></div>
+    <div class="feld"><label for="e-b2m">Zweitbetreuung: E-Mail (freiwillig)</label><input id="e-b2m" type="email"></div>
+  </div>
+  <p class="hinweis" style="margin-top:14px">Ihre Erstbetreuung hat die Arbeit empfohlen und dabei bestätigt, dass sie mit <span class="offen" title="Noch festzulegen">[1,3]</span> oder besser bewertet wurde, bei Dissertationen mit <span class="offen" title="Noch festzulegen">[magna cum laude]</span> oder besser. Nach dem Absenden bekommt sie Ihre Kurzfassung, bestätigt, dass sie die Arbeit zutreffend wiedergibt, und gibt ihr Geleitwort frei. Sie kann auch um eine Überarbeitung bitten.</p>
+</section>
+
+<section class="abschnitt"><h2><span class="nummer">4</span>Inhalt der Arbeit</h2>
+  <p style="margin:6px 0 0">Die Kurzfassung folgt einem festen Schema, damit alle Arbeiten vergleichbar sind. Schreiben Sie sie für Leser:innen aus Wissenschaft und Versorgungspraxis, ohne unerklärte Abkürzungen, ohne personenbezogene Daten und auf Deutsch. <a href="studierende.html#kurzfassung">Schema mit Beispielen</a></p>
+  <div class="feld"><label for="e-satz">Ergebnis in einem Satz <span class="pflicht">*</span><span class="zaehler" data-zaehler-fuer="e-satz">0 / 200</span></label><textarea id="e-satz" data-max="200" placeholder="z. B. Ein fester Impftermin im Haus ging mit höheren Impfquoten einher."></textarea><span class="hilfe">Erscheint in der Liste unter dem Titel.</span></div>
+  <div class="feld"><label for="e-hg">Hintergrund und Fragestellung <span class="pflicht">*</span><span class="zaehler" data-zaehler-fuer="e-hg">0 / 600</span></label><textarea id="e-hg" data-max="600" placeholder=""></textarea><span class="hilfe">Warum ist das Thema wichtig, welche Frage beantwortet die Arbeit?</span></div>
+  <div class="feld"><label for="e-me">Daten und Methode <span class="pflicht">*</span><span class="zaehler" data-zaehler-fuer="e-me">0 / 600</span></label><textarea id="e-me" data-max="600" placeholder=""></textarea><span class="hilfe">Design, Daten, Stichprobe, Auswertung.</span></div>
+  <div class="reihe">
+    <div class="feld"><label for="e-ansatz">Studienansatz <span class="pflicht">*</span></label>
+      <select id="e-ansatz"><option>Quantitativ</option><option>Qualitativ</option><option>Mixed Methods</option><option>Übersichtsarbeit</option></select></div>
+    <div class="feld"><span class="label">Datengrundlage <span class="pflicht">*</span> (mehrere möglich)</span>
+      <div class="optionen"><label class="wahl"><input type="checkbox" name="e-daten" value="Eigene Befragung / Interviews"><span>Eigene Befragung / Interviews</span></label><label class="wahl"><input type="checkbox" name="e-daten" value="Routinedaten"><span>Routinedaten</span></label><label class="wahl"><input type="checkbox" name="e-daten" value="Register- &amp; Studiendaten"><span>Register- &amp; Studiendaten</span></label><label class="wahl"><input type="checkbox" name="e-daten" value="Literatur"><span>Literatur</span></label><label class="wahl"><input type="checkbox" name="e-daten" value="Andere"><span>Andere</span></label></div>
+      <input id="e-daten-andere" type="text" placeholder="z. B. Nutzungsdaten eines Herstellers" hidden style="margin-top:6px"></div>
+  </div>
+  <div class="reihe">
+    <div class="feld"><label for="e-ethik">Ethikvotum <span class="pflicht">*</span></label>
+      <select id="e-ethik"><option value="liegt">Liegt vor</option><option value="nicht">Nicht erforderlich</option></select></div>
+    <div class="feld"><label for="e-ethik-text" id="e-ethik-label">Ethikkommission <span class="pflicht">*</span></label>
+      <input id="e-ethik-text" type="text" placeholder="z. B. Ethikkommission der Universität A">
+      <span class="hilfe">Liegt ein Votum vor: Name der Kommission. Wenn nicht: kurz, warum keines nötig war.</span></div>
+  </div>
+  <div class="feld"><label for="e-er">Ergebnisse <span class="pflicht">*</span><span class="zaehler" data-zaehler-fuer="e-er">0 / 800</span></label><textarea id="e-er" data-max="800" placeholder=""></textarea><span class="hilfe">Die wichtigsten Befunde, gern mit Zahlen.</span></div>
+  <div class="feld"><label for="e-be">Bedeutung für die Versorgung <span class="pflicht">*</span><span class="zaehler" data-zaehler-fuer="e-be">0 / 500</span></label><textarea id="e-be" data-max="500" placeholder=""></textarea><span class="hilfe">Was folgt daraus für Praxis, Steuerung oder Forschung?</span></div>
+  <div class="feld"><label for="e-stw">Stichwörter <span class="pflicht">*</span> <span class="zaehler" id="stw-zaehler">0 / 5</span></label>
+    <input id="e-stw" type="text" placeholder="durch Kommas getrennt, z. B. Routinedaten, Langzeitpflege, Influenza">
+    <span class="hilfe">3 bis 5 Stichwörter, die nicht schon im Titel stehen.</span></div>
+</section>
+
+<section class="abschnitt"><h2><span class="nummer">5</span>Volltext</h2>
+  <div class="feld"><span class="label">Gilt für Ihre Arbeit ein Sperrvermerk? <span class="pflicht">*</span></span>
+    <div class="optionen">
+      <label class="option"><input type="radio" name="e-sperre" value="nein" checked><span>Nein</span></label>
+      <label class="option"><input type="radio" name="e-sperre" value="ja"><span>Ja – dann veröffentlichen wir nur die Kurzfassung, keinen Volltext</span></label>
+    </div>
+    <span class="hilfe">Einen Sperrvermerk gibt es meist, wenn Sie Daten einer Krankenkasse, Klinik oder Firma genutzt haben. Er steht dann vorn in Ihrer Arbeit. <a href="studierende.html#sperrvermerk">Was ist ein Sperrvermerk?</a></span></div>
+  <div class="feld" id="volltext-wege"><span class="label">Wie kommen andere an den Volltext? <span class="pflicht">*</span></span>
+    <div class="optionen">
+      <label class="option"><input type="radio" name="e-voll" value="pdf"><span>PDF hochladen<small>Wird zusammen mit der Kurzfassung veröffentlicht. Höchstens <span class="offen" title="Noch festzulegen">[20]</span> MB. <a href="studierende.html#volltext">Vorgaben für das PDF</a></small></span></label>
+      <label class="option"><input type="radio" name="e-voll" value="link"><span>Ist schon online<small>Link oder DOI, z. B. im Repositorium Ihrer Hochschule oder bei Zenodo. Hat die Arbeit eine DOI, übernehmen wir sie.</small></span></label>
+      <label class="option"><input type="radio" name="e-voll" value="anfrage" checked><span>Nicht online – auf Anfrage<small>Interessierte schreiben Ihnen über die Website. Ihre E-Mail-Adresse bleibt verborgen.</small></span></label>
+    </div>
+    <input id="e-pdf" type="file" accept="application/pdf" hidden disabled style="margin-top:8px">
+    <input id="e-link" type="url" placeholder="https://… oder DOI" hidden style="margin-top:8px"></div>
+</section>
+
+<section class="abschnitt"><h2><span class="nummer">6</span>Ihr Profil (freiwillig)</h2>
+  <p style="margin:6px 0 0">Mit einem Profil stellen Sie sich vor. Alle Ihre Arbeiten in der Edition erscheinen dort gesammelt. Ob Sie ein Profil anlegen und wer Sie darüber erreichen darf, entscheiden Sie selbst. Das hat keinen Einfluss auf die Aufnahme Ihrer Arbeit. <a href="profile.html">Beispiele ansehen</a></p>
+  <label class="check"><input type="checkbox" id="e-profil"><span><b>Ja, ich möchte ein Profil in der MVF-Edition Ausgezeichnet anlegen.</b></span></label>
+  <div id="profil-felder" hidden>
+    <div class="feld"><label for="e-p-status">Status der Ausbildung</label><input id="e-p-status" type="text" placeholder="z. B. Abschluss M. Sc. Versorgungsforschung, März 2026"></div>
+    <div class="feld"><label for="e-p-kurz">Über mich <span class="zaehler" data-zaehler-fuer="e-p-kurz">0 / 400</span></label>
+      <textarea id="e-p-kurz" data-max="400" placeholder="Zwei, drei Sätze: woran Sie arbeiten, was Sie interessiert"></textarea></div>
+    <div class="reihe">
+      <div class="feld"><label for="e-p-schwer">Schwerpunkte</label><input id="e-p-schwer" type="text" placeholder="durch Kommas getrennt, z. B. Langzeitpflege, Routinedaten"></div>
+      <div class="feld"><label for="e-p-meth">Methoden</label><input id="e-p-meth" type="text" placeholder="durch Kommas getrennt, z. B. Mehrebenenmodelle, R, Interviews"></div>
+    </div>
+    <div class="feld"><label for="e-p-foto">Foto (freiwillig)</label><input id="e-p-foto" type="file" accept="image/jpeg,image/png" disabled>
+      <span class="hilfe">Ein Porträt als JPG oder PNG. Wir schneiden es automatisch rund auf das Gesicht zu. Ohne Foto erscheinen Ihre Initialen. Austauschen oder entfernen können Sie es über den Link zum Bearbeiten.</span></div>
+    <div class="feld"><label for="e-p-linkedin">LinkedIn-Profil (freiwillig)</label><input id="e-p-linkedin" type="url" placeholder="https://www.linkedin.com/in/…"><span class="hilfe">Erscheint als Knopf neben Ihrem Namen, wie Ihre ORCID.</span></div>
+    <div class="feld"><label for="e-p-sucht">Ich suche (freiwillig)</label><input id="e-p-sucht" type="text" placeholder="z. B. Promotion ab 2027, Stelle in der Versorgungsforschung"></div>
+    <div class="feld"><span class="label">Wer darf Sie über die Website kontaktieren?</span>
+      <span class="hilfe" style="margin:0 0 6px">Für jede Gruppe einzeln. Ihre E-Mail-Adresse bleibt verborgen, bis Sie antworten. Ändern oder löschen können Sie Ihr Profil jederzeit über einen persönlichen Link, den Sie sich per E-Mail schicken lassen. Ein Passwort brauchen Sie nicht.</span>
+      <div class="optionen"><label class="option"><input type="checkbox" name="e-kontakt" value="hochschulen"><span>Hochschulen und Forschung<small>Promotion, Stellen in Projekten</small></span></label><label class="option"><input type="checkbox" name="e-kontakt" value="arbeitgeber"><span>Arbeitgeber<small>Stellen, Traineeprogramme, Praktika</small></span></label><label class="option"><input type="checkbox" name="e-kontakt" value="personal"><span>Personalvermittlung<small>Vermittlung in Stellen</small></span></label><label class="option"><input type="checkbox" name="e-kontakt" value="praxis"><span>Praxispartner<small>Themen und Daten für weitere Arbeiten</small></span></label></div></div>
+  </div>
+</section>
+
+<section class="abschnitt"><h2><span class="nummer">7</span>Monitor Versorgungsforschung kennenlernen (freiwillig)</h2>
+  <p style="margin:6px 0 0">Monitor Versorgungsforschung ist die Fachzeitschrift hinter der Edition. Die Angebote hier sind freiwillig und haben keinen Einfluss auf die Aufnahme Ihrer Arbeit.</p>
+  <label class="check"><input type="checkbox" id="e-probe"><span><b>Ja, ich möchte ein kostenloses Probe-Abo von MVF erhalten:</b> eine Ausgabe. Das Probe-Abo endet automatisch, ohne Kündigung und ohne Folgekosten.</span></label>
+  <label class="check"><input type="checkbox" id="e-studabo"><span><b>Ja, ich möchte ein Studierenden-Abo bestellen:</b> 6 Ausgaben im Jahr für 90 € zzgl. 9,99 € Versand innerhalb Deutschlands. Bestellt wird anschließend über das <a href="https://www.monitor-versorgungsforschung.de/internals/abonnement/" target="_blank" rel="noopener">Abo-Formular von MVF</a>, mit Studierendennachweis.</span></label>
+  <label class="check"><input type="checkbox" id="e-nl"><span><b>Ja, ich möchte den kostenlosen Newsletter der Knowledge-Hubs erhalten, die ich oben für meine Arbeit gewählt habe.</b> Sie bekommen eine E-Mail mit einem Bestätigungslink. Erst nach dieser Bestätigung tragen wir Sie ein. Abmelden können Sie sich in jedem Newsletter.</span></label>
+  <div id="abo-felder" hidden>
+    <p class="klein" style="margin:12px 0 0">Für den Versand der Hefte brauchen wir Ihre Postanschrift. Sie wird nur dafür genutzt und nicht veröffentlicht.</p>
+    <div class="feld"><label for="e-strasse">Straße und Hausnummer</label><input id="e-strasse" type="text" autocomplete="street-address"></div>
+    <div class="reihe3 plz-ort">
+      <div class="feld"><label for="e-plz">PLZ</label><input id="e-plz" type="text" autocomplete="postal-code"></div>
+      <div class="feld"><label for="e-ort">Ort</label><input id="e-ort" type="text" autocomplete="address-level2"></div>
+      <div class="feld"><label for="e-land">Land</label><input id="e-land" type="text" value="Deutschland" autocomplete="country-name"></div>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt"><h2><span class="nummer">8</span>Bestätigen und absenden</h2>
+  <label class="check"><input type="checkbox"><span>Ich bin Verfasser:in der Arbeit. <span class="pflicht">*</span></span></label>
+  <label class="check"><input type="checkbox"><span>Die Kurzfassung enthält keine personenbezogenen Daten. Ein Ethikvotum ist genannt, wo eines nötig war. <span class="pflicht">*</span></span></label>
+  <label class="check"><input type="checkbox"><span>Falls ich Daten Dritter genutzt habe (z. B. einer Krankenkasse): Der Datengeber ist mit der Veröffentlichung dieser Kurzfassung einverstanden. Das gilt auch bei einem Sperrvermerk – gesperrt ist dann nur der Volltext. <span class="pflicht">*</span></span></label>
+  <label class="check"><input type="checkbox"><span>Die Kurzfassung darf zusammen mit dem Geleitwort unter der Lizenz CC BY 4.0 veröffentlicht werden: Andere dürfen sie mit Nennung meines Namens weiterverwenden. Die Rechte an der Arbeit selbst bleiben bei mir. <a href="studierende.html#rechte">Was heißt das?</a> <span class="pflicht">*</span></span></label>
+  <label class="check"><input type="checkbox"><span>Ich habe die <a href="https://knowledge-hubs.m-vf.de/datenschutz.html">Datenschutzhinweise</a> gelesen. <span class="pflicht">*</span></span></label>
+  <button class="knopf" type="submit" disabled style="margin-top:16px" title="Vorschau: ohne Funktion">Zur Aufnahme einreichen</button>
+  <p class="klein" style="margin-top:10px">Sie bekommen sofort eine Eingangsbestätigung per E-Mail. Die Rückmeldung Ihrer Betreuung kommt meist innerhalb weniger Tage, die Entscheidung von Herausgebern und Verlag in der Regel nach <span class="offen" title="Noch festzulegen">[X]</span> Wochen.</p>
+  <p class="speicher" id="speicherstand">Noch nichts gespeichert.</p>
+  <p class="klein"><b>Vorschau:</b> Das Formular hat noch keine Funktion. Es wird nichts übermittelt.</p>
+</section>
+</form>
+</div></main>
+<footer class="fuss">
+  <div class="wrap">
+    <span class="absender">Ein Angebot von <img src="logo/mvf-logo-negativ.png" alt="Monitor Versorgungsforschung" width="1236" height="327"> · in Kooperation mit dem DNVF e. V.</span>
+    <nav aria-label="Rechtliches">
+      <a href="https://knowledge-hubs.m-vf.de/impressum.html">Impressum</a>
+      <a href="https://knowledge-hubs.m-vf.de/datenschutz.html">Datenschutz</a>
+      <a href="mailto:info@m-vf.de">Kontakt</a>
+    </nav>
+  </div>
+</footer>
+<div class="testband">VORSCHAU – Beispieldaten, Stand 30.10.2026</div>
+<div class="toast" id="toast" role="status" hidden></div>
+<script src="portal.js" defer></script>
+</body>
+</html>
